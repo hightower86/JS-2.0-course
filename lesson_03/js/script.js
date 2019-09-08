@@ -122,3 +122,45 @@ btn7.onclick = function() {
 inp7.onchange = function() {
   result7.value = '';
 };
+
+// Task 8.
+// Создайте input куда пользователь может ввести число.
+// После нажатия кнопки - на страницу должно выводиться
+// сообщение - четное или нет это число.
+
+const inp8 = document.querySelector('#i8');
+const btn8 = document.querySelector('#b8');
+const result8 = document.querySelector('#res8');
+
+btn8.onclick = function() {
+  const a = +inp8.value;
+  if (a % 2 === 0) {
+    result8.value = 'the number is even';
+  } else {
+    result8.value = 'the number is NOT even';
+  }
+};
+inp8.onchange = function() {
+  result8.value = '';
+};
+
+// Task 9.
+// Создайте 2 инпута. Если оба инпута заполнены (не равны
+//   пустой строке), то по нажатию кнопки число из
+//   первого инпута возведите в степень из второго
+//   input. Результат выведите на страницу.
+const inp9 = document.querySelector('#i9');
+const inp91 = document.querySelector('#i91');
+const btn9 = document.querySelector('#b9');
+const result9 = document.querySelector('#res9');
+
+btn9.onclick = function() {
+  const a = +inp9.value;
+  const b = +inp91.value;
+  if (a != 0 && b != 0) {
+    result9.value = a ** b;
+  }
+};
+inp9.onchange = function() {
+  result9.value = '';
+};
