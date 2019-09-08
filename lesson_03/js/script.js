@@ -164,3 +164,52 @@ btn9.onclick = function() {
 inp9.onchange = function() {
   result9.value = '';
 };
+
+// Task 10.
+// Есть поле input куда пользователь может ввести свое имя.
+// Нужно при нажатии кнопки - сказать с помощью
+// alert('Hello имя_пользователя'), но хитрые пользователи
+// часто нажимают несколько раз пробел.
+// Вроде ничего и не ввел, но программа считывает
+// пробелы и пытается работать. Напишите проверку,
+// которая выводит предупреждение если пользователь
+// ничего не ввел, или ввел один пробел. В остальных
+// случаях - Hello...
+const inp10 = document.querySelector('#i10');
+const btn10 = document.querySelector('#b10');
+const result10 = document.querySelector('#res10');
+
+btn10.onclick = function() {
+  const a = inp10.value;
+  if (a === '' || a === ' ') {
+    alert('вы не ввели свое имя!');
+  } else {
+    alert(`Hello ${a}`);
+  }
+};
+inp10.onchange = function() {
+  result10.value = '';
+};
+
+// Task 11.
+// Хитрый пользователь научился обходить нашу предыдущую
+// задачу, и начал вводить где 3, а где и 5 пробелов.
+// Напишите программу, которая проверяет пробелы или
+// нет введены в строку. Если она равна - выведите ошибку,
+//если нет - сообщение с содержимым input.
+
+const inp11 = document.querySelector('#i11');
+const btn11 = document.querySelector('#b11');
+const result11 = document.querySelector('#res11');
+
+btn11.onclick = function() {
+  const a = inp11.value.trim();
+  if (a === '') {
+    alert('вы ничего не ввели!');
+  } else {
+    alert(`Hello ${a}`);
+  }
+};
+inp11.onchange = function() {
+  result11.value = '';
+};
