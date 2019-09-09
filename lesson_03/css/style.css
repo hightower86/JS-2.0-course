@@ -1,12 +1,23 @@
+* {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+h3 {
+  margin: 10px;
+}
+
 .task {
   border: 1px solid #000;
   border-radius: 0.3rem;
   padding: 10px;
   margin: 5px;
 }
+button {
+  background-color: rgb(176, 205, 241, 0.3);
+}
 .result {
   width: 100%;
   margin-top: 0.5rem;
-  //display: block;
   box-sizing: border-box;
+  background-color: rgba(228, 235, 197, 0.3);
 }
