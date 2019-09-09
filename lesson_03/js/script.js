@@ -237,3 +237,61 @@ btn12.onclick = function() {
       console.log('Вы ввели неверное число');
   }
 };
+
+//Task 13.
+// Пользователь может ввести номер дома. Если дом от 1
+// до 5 - то улица 1, если от 6 до 11 - улица 2,
+// если от 11 до 20 - улица 3. Используя if,
+// elseif - реализуйте программу, которая будет
+// указывать улицу в зависимости от введенного дома.
+
+const inp13 = document.querySelector('#i13');
+const btn13 = document.querySelector('#b13');
+
+btn13.onclick = function() {
+  const houseNumber = +inp13.value;
+
+  if (houseNumber >= 1 && houseNumber <= 5) {
+    console.log('улица 1');
+  } else if (houseNumber >= 6 && houseNumber <= 10) {
+    console.log('улица 2');
+  } else if (houseNumber >= 11 && houseNumber <= 20) {
+    console.log('улица 3');
+  } else {
+    console.log('некорректные данные');
+  }
+};
+
+// Task 14.
+// Создайте input куда пользователь может ввести количество
+//  рентген. Это число от 0 и до 1000. С помощью if, else if реализуйте
+//  вывод по таблице: от 0 до 25 - не обнаруживается до 50 -
+//  снижение числа лимфоцитов до 100 - вялость, рвота,
+//  до 150 - смертность 5%, до 350 - смертность 50% за 30 суток,
+//  до 600 - 90% смертность за 2 недели. Вывод результатов сделайте
+//  на страницу.
+
+const inp14 = document.querySelector('#i14');
+const btn14 = document.querySelector('#b14');
+const r14 = document.querySelector('#r14');
+
+btn14.onclick = function() {
+  const xRays = +inp14.value;
+  if (xRays < 0 || xRays > 1000) {
+    r14.value = 'некорректные данные';
+  } else if (xRays >= 0 && xRays <= 25) {
+    r14.value = 'не обнаруживается';
+  } else if (xRays <= 50) {
+    r14.value = 'снижение числа лимфоцитов';
+  } else if (xRays <= 100) {
+    r14.value = 'вялость, рвота';
+  } else if (xRays <= 150) {
+    r14.value = '5% смертность';
+  } else if (xRays <= 350) {
+    r14.value = 'смертность 50% за 30 суток ';
+  } else if (xRays <= 600) {
+    r14.value = 'смертность 90% за 2 недели ';
+  } else {
+    r14.value = 'летальный исход';
+  }
+};
