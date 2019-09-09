@@ -332,3 +332,34 @@ btn16.onclick = function() {
     r16.value = 'налог 11075 тенге';
   }
 };
+
+// Task 17.
+// Создайте 2 инпута. В первый пользователь может ввести число
+// денег в долларах. Во второй - строку euro, rub, uah.
+// Используя if, elseif сделайте по нажатию кнопки пересчет в ту
+// валюту, которую ввел пользователь.
+
+const inp17 = document.querySelector('#i17');
+const inp172 = document.querySelector('#i172');
+const b17 = document.querySelector('#b17');
+const r17 = document.querySelector('#r17');
+
+b17.onclick = function() {
+  const coins = +inp17.value;
+  const currency = inp172.value.trim();
+
+  switch (currency) {
+    case 'uah':
+      r17.value = 2.632 * coins;
+      break;
+    case 'eur':
+      r17.value = 72.49 * coins;
+      break;
+    case 'rub':
+      r17.value = 1 * coins;
+      break;
+    default:
+      r17.value = 'В поле валюты можно ввести только uah, eur или rub';
+      break;
+  }
+};
