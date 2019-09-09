@@ -213,3 +213,27 @@ btn11.onclick = function() {
 inp11.onchange = function() {
   result11.value = '';
 };
+
+// Task 12.
+// Пользователь может ввести число от 1 до 3. Если
+// пользователь ввел 1 - то в консоль выведите слово
+// "один" и т.д. Для решения используйте switch.
+const inp12 = document.querySelector('#i12');
+const btn12 = document.querySelector('#b12');
+
+btn12.onclick = function() {
+  const a = +inp12.value;
+  switch (a) {
+    case 1:
+      console.log('один');
+      break;
+    case 2:
+      console.log('два');
+      break;
+    case 3:
+      console.log('три');
+      break;
+    default:
+      console.log('Вы ввели неверное число');
+  }
+};
