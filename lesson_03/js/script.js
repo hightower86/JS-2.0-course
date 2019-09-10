@@ -303,7 +303,7 @@ const x = 1;
 const y = 0;
 console.log(x && y); // 0
 console.log(x || y); // 1
-// очень интересно. но ничего не понял :))
+// ничего не понял, но очень интересно :))
 
 // Task 16.
 // В Казахстане, налог на объем двигателя объемом 500 куб составляет
@@ -348,18 +348,99 @@ b17.onclick = function() {
   const coins = +inp17.value;
   const currency = inp172.value.trim();
 
+  if (currency == 'uah') {
+    return (r17.value = 2.632 * coins);
+  } else if (currency == 'eur') {
+    return (r17.value = 72.49 * coins);
+  } else if (currency == 'rub') {
+    return (r17.value = 1 * coins);
+  } else {
+    return (r17.value = 'В поле валюты можно ввести только uah, eur или rub');
+  }
+};
+
+// Task 18.
+// Проделайте предыдущую задачу с помощью switch case.
+
+const inp18 = document.querySelector('#i18');
+const inp182 = document.querySelector('#i182');
+const b18 = document.querySelector('#b18');
+const r18 = document.querySelector('#r18');
+
+b18.onclick = function() {
+  const coins = +inp18.value;
+  const currency = inp182.value.trim();
+
   switch (currency) {
     case 'uah':
-      r17.value = 2.632 * coins;
+      r18.value = 2.632 * coins;
       break;
     case 'eur':
-      r17.value = 72.49 * coins;
+      r18.value = 72.49 * coins;
       break;
     case 'rub':
-      r17.value = 1 * coins;
+      r18.value = 1 * coins;
       break;
     default:
-      r17.value = 'В поле валюты можно ввести только uah, eur или rub';
+      r18.value = 'В поле валюты можно ввести только uah, eur или rub';
       break;
+  }
+};
+
+// Task 19.
+// Создайте 2 input куда пользователь может ввести числа. В третий
+// input - может ввести знак - минус, плюс, умножить, поделить.
+// С помощью if, else if по нажатию кнопки выводите результат
+// выбранной операции на страницу.
+
+const inp19 = document.querySelector('#i19');
+const inp192 = document.querySelector('#i192');
+const inp193 = document.querySelector('#i193');
+const b19 = document.querySelector('#b19');
+const r19 = document.querySelector('#r19');
+
+b19.onclick = function() {
+  const action = inp193.value.trim();
+  const firstNumber = +inp19.value;
+  const secondNumber = +inp192.value;
+
+  if (action == '*') {
+    return (r19.value = firstNumber * secondNumber);
+  } else if (action == '/') {
+    return (r19.value = firstNumber / secondNumber);
+  } else if (action == '+') {
+    return (r19.value = firstNumber + secondNumber);
+  } else if (action == '-') {
+    return (r19.value = firstNumber - secondNumber);
+  } else {
+    return (r19.value = 'В поле action можно ввести только +, -, * или /');
+  }
+};
+
+// Task 20.
+// Проделайте предыдущую задачу с помощью switch case.
+
+const inp20 = document.querySelector('#i20');
+const inp202 = document.querySelector('#i202');
+const inp203 = document.querySelector('#i203');
+const b20 = document.querySelector('#b20');
+const r20 = document.querySelector('#r20');
+
+b20.onclick = function() {
+  const action = inp203.value.trim();
+  const firstNumber = +inp20.value;
+  const secondNumber = +inp202.value;
+
+  switch (action) {
+    case '*':
+      return (r20.value = firstNumber * secondNumber);
+    case '/':
+      return (r20.value = firstNumber / secondNumber);
+    case '+':
+      return (r20.value = firstNumber + secondNumber);
+    case '-':
+      return (r20.value = firstNumber - secondNumber);
+    default:
+      return (r20.value = 'В поле action можно ввести только +, -, * или /');
   }
 };
