@@ -112,3 +112,24 @@ const result12 = document.querySelector('.result12');
 btn12.onclick = () => {
   result12.value = inp12.value;
 };
+
+// task 13 --------------------
+
+const inp13 = document.querySelector('.inp13');
+const btn13 = document.querySelector('.btn13');
+const result13 = document.querySelector('.result13');
+
+btn13.onclick = () => {
+  result13.value = inp13.value;
+};
+inp13.oninput = () => {
+  result13.value = inp13.value;
+};
+
+// task 13 --------------------
+const ta14 = document.querySelector('.ta14');
+const btn14 = document.querySelector('.btn14');
+const result14 = document.querySelector('.result14');
+btn14.onclick = () => {
+  result14.innerHTML = ta14.value;
+};
