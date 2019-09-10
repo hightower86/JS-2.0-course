@@ -64,8 +64,10 @@ btn7.onclick = () => {
 // task 8 --------------------
 
 const btn8 = document.querySelector('.btn8');
+
 btn8.onclick = () => {
   const inp8 = document.querySelector('.div8');
+
   inp8.innerHTML += '<input class="newInp8" type="text"/>';
   inp8.innerHTML += '<input class="newBtn8" type="button" value="button 8"/>';
   const newBtn8 = document.querySelector('.newBtn8');
@@ -73,4 +75,21 @@ btn8.onclick = () => {
   newBtn8.onclick = () => {
     alert(newInp8.value);
   };
+};
+
+// task 9 --------------------
+const inp9 = document.querySelector('.inp9');
+const btn9 = document.querySelector('.btn9');
+btn9.onclick = () => {
+  alert(inp9.checked ? inp9.value : inp9.checked);
+};
+
+// task 10 --------------------
+
+const inp10 = document.querySelector('.inp10');
+const btn10 = document.querySelector('.btn10');
+const div10 = document.querySelector('.task-10');
+
+btn10.onclick = () => {
+  div10.style.backgroundColor = inp10.value;
 };
