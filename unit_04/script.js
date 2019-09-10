@@ -93,3 +93,22 @@ const div10 = document.querySelector('.task-10');
 btn10.onclick = () => {
   div10.style.backgroundColor = inp10.value;
 };
+
+// task 11 --------------------
+const inp11 = document.querySelector('.inp11');
+const inp112 = document.querySelector('.inp112');
+const btn11 = document.querySelector('.btn11');
+
+btn11.onclick = () => {
+  inp112.value = inp11.value;
+};
+
+// task 12 --------------------
+
+const inp12 = document.querySelector('.inp12');
+const btn12 = document.querySelector('.btn12');
+const result12 = document.querySelector('.result12');
+
+btn12.onclick = () => {
+  result12.value = inp12.value;
+};
