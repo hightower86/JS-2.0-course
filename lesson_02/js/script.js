@@ -105,136 +105,49 @@ inp14.value = 'Hello';
 const y = document.querySelector('.inp15');
 y.style.border = '2px solid red';
 
-// // Task 15.
-// // Создайте input и получите его в переменную y.
-// // В js выполните следующее присвоение: y.style.border = '2px solid red' .
-// // Изучите результат операции.
+// Task 16 ----------------
+const inp16 = document.querySelector('.inp16');
+const inp161 = document.querySelector('.inp161');
+const btn16 = document.querySelector('.btn16');
+const result16 = document.querySelector('.result16');
 
-// body.innerHTML += '<hr>';
-// body.innerHTML += '<input class="inp15">';
-// let y = document.querySelector('.inp15');
-// y.style.border = '2px solid red';
+btn16.onclick = () => (result16.innerHTML = +inp16.value + +inp161.value);
 
-// // Task 16.
-// // Создайте два input type=number, куда пользователь
-// // может ввести числа. Выведите на страницу сумму
-// // данных чисел.
+// Task 17 ----------------
+const inp17 = document.querySelector('.inp17');
+const btn17 = document.querySelector('.btn17');
 
-// body.innerHTML += '<hr>';
-// body.innerHTML += '<input class="inp16" type="number">';
-// body.innerHTML += '<input class="inp161" type="number">';
-// body.innerHTML += '<br>';
-// body.innerHTML += '<button class="btn16">SUM</button>';
+btn17.onclick = () => {
+  let t = inp17.value;
+  t = parseInt(t);
+  console.log(t);
+};
 
-// let inp16 = document.querySelector('.inp16');
-// let inp161 = document.querySelector('.inp161');
-// let btn16 = document.querySelector('.btn16');
+// Task 18 ----------------
+const inp18 = document.querySelector('.inp18');
+const btn18 = document.querySelector('.btn18');
 
-// btn16.onclick = function() {
-//   body.innerHTML += +inp16.value + +inp161.value;
-// };
+btn18.onclick = () => {
+  let t = inp18.value;
+  t = parseFloat(t);
+  console.log(t);
+};
 
-// // Task 17.
-// // Создайте input type="text" куда пользователь может
-// // ввести строку и число. Создайте функцию, которая
-// // запускается по нажатию на кнопку. Получите значение
-// // из input в переменную t. А затем сделайте операцию
-// // t = parseInt(t), и результат операции выведите в
-// // консоль. Прочитайте за эту операцию. Попробуйте
-// // по очереди вводить 44, 44aaa, 44.3, a45 . Изучите вывод.
-// body.innerHTML += '<hr>';
-// body.innerHTML += '<br>';
-// body.innerHTML += '<h3>Task 17</h3>';
+// Task 19 ----------------
+const inp19 = document.querySelector('.inp19');
+const inp191 = document.querySelector('.inp191');
+const btn19 = document.querySelector('.btn19');
+const result19 = document.querySelector('.result19');
 
-// body.innerHTML += '<input class="inp17" type="text">';
-// body.innerHTML += '<button class="btn17">parseInt</button>';
+btn19.onclick = () => (result19.innerHTML = +inp19.value + +inp191.value);
 
-// let inp17 = document.querySelector('.inp17');
-// let btn17 = document.querySelector('.btn17');
+// Task 19 ----------------
+const name20 = document.querySelector('.name20');
+const fName = document.querySelector('.fName20');
+const age = document.querySelector('.age20');
+const profession = document.querySelector('.proff20');
+const btn20 = document.querySelector('.btn20');
 
-// btn17.onclick = function() {
-//   let t = inp17.value;
-//   t = parseInt(t);
-//   console.log(t);
-// };
-// // почитал. инетересная функция, спасибо.
-
-// // Task 18.
-// // Создайте input type="text" куда пользователь может
-// // ввести строку и число. Создайте функцию, которая
-// // запускается по нажатию на кнопку. Получите значение
-// // из input в переменную t. А затем сделайте операцию
-// // t = parseFloat(t), и результат операции выведите в
-// // консоль. Прочитайте за эту операцию. Попробуйте по
-// // очереди вводить 44, 44aaa, 44.3, a45 . Изучите вывод.
-
-// body.innerHTML += '<hr>';
-// body.innerHTML += '<br>';
-// body.innerHTML += '<h3>Task 18</h3>';
-
-// body.innerHTML += '<input class="inp18" type="text">';
-// body.innerHTML += '<button class="btn18">parseFloat</button>';
-
-// let inp18 = document.querySelector('.inp18');
-// let btn18 = document.querySelector('.btn18');
-
-// btn18.onclick = function() {
-//   let t = inp18.value;
-//   t = parseFloat(t);
-//   console.log(t);
-// };
-
-// // Task 19.
-// // Создайте два input type=number, куда пользователь
-// // может ввести отрицательные числа. Выведите на
-// // страницу сумму данных чисел.
-
-// body.innerHTML += '<hr>';
-// body.innerHTML += '<br>';
-// body.innerHTML += '<h3>Task 19</h3>';
-
-// body.innerHTML += '<hr>';
-// body.innerHTML += '<input class="inp19" type="number">';
-// body.innerHTML += '<input class="inp191" type="number">';
-// body.innerHTML += '<br>';
-// body.innerHTML += '<button class="btn19">SUM</button>';
-
-// let inp19 = document.querySelector('.inp19');
-// let inp191 = document.querySelector('.inp191');
-// let btn19 = document.querySelector('.btn19');
-
-// btn19.onclick = function() {
-//   body.innerHTML += +inp19.value + +inp191.value;
-// };
-
-// // Task 20.
-// // Создайте опросник, куда пользователь может ввести
-// // имя, фамилию, возраст, род занятий. И кнопку. По
-// // нажатию кнопки выведите на страницу предложение
-// // 'Уважаемый Иван, Иванов, ваш возраст 33 года, по
-// // професси вы ...' куда поставьте соответствующие
-// // данные из inputов.
-// body.innerHTML += '<hr>';
-// body.innerHTML += '<br>';
-// body.innerHTML += '<h3>Task 20</h3>';
-
-// body.innerHTML += '<input placeholder="Name:" class="name20">';
-// body.innerHTML += '<input placeholder="Family name:" class="fName20">';
-// body.innerHTML += '<input placeholder="age:" class="age20">';
-// body.innerHTML += '<input placeholder="Profession:" class="proff20">';
-// body.innerHTML += '<button class="btn20">TASK 20</button>';
-
-// body.innerHTML += '<br>';
-// let name20 = document.querySelector('.name20');
-// let fName = document.querySelector('.fName20');
-// let age = document.querySelector('.age20');
-// let profession = document.querySelector('.proff20');
-// let btn20 = document.querySelector('.btn20');
-
-// btn20.onclick = function() {
-//   body.innerHTML += `Dear ${name20.value} ${fName.value}, your age is ${age.value}, your profession is ${profession.value}`;
-// };
-
-// //увлекся процессом и не создал ни одного элемента
-// //в файле index.html. надеюсь, не сочтете за ошибку
-// //делал это из соображений лучшего закрепления новых знаний
+btn20.onclick = function() {
+  body.innerHTML += `Dear ${name20.value} ${fName.value}, your age is ${age.value}, your profession is ${profession.value}`;
+};
