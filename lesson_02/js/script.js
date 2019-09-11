@@ -63,10 +63,31 @@ btn9.onclick = function() {
   inp9.value = '';
 };
 
-// Task 10.
-// Создайте input и кнопку. По нажатию на кнопку
-// выполняется функция, которая выводит на страницу
-// число, которое ввел пользователь умноженное на 10.
+// Task 10 ---------------
+const inp10 = document.querySelector('.inp10');
+const btn10 = document.querySelector('.btn10');
+const result10 = document.querySelector('.result10');
+
+btn10.onclick = () => {
+  result10.innerHTML += inp10.value * 10;
+};
+
+// Task 10 ---------------
+const inp11 = document.querySelector('.inp11');
+const btn11 = document.querySelector('.btn11');
+const result11 = document.querySelector('.result11');
+
+btn11.onclick = () => (result11.innerHTML = +inp11.value + 10);
+
+// Task 11 ----------------
+
+const inp12 = document.querySelector('.inp12');
+const inp122 = document.querySelector('.inp122');
+const btn12 = document.querySelector('.btn12');
+const result12 = document.querySelector('.result12');
+
+btn12.onclick = () =>
+  (result12.innerHTML = `Hello ${inp12.value}  ${inp122.value}`);
 
 // body.innerHTML += '<hr>';
 // body.innerHTML += '<input class="inp2">';
