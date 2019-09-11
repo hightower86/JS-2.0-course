@@ -133,3 +133,15 @@ const result14 = document.querySelector('.result14');
 btn14.onclick = () => {
   result14.innerHTML = ta14.value;
 };
+
+// task 13 --------------------
+const ta15 = document.querySelector('#ta15');
+const inp15 = document.querySelector('#inp15');
+const btn15 = document.querySelector('#btn15');
+const div15 = document.querySelector('.div15');
+
+btn15.onclick = () => {
+  result = inp15.value;
+  ta15.value = result;
+  div15.innerHTML = result;
+};
