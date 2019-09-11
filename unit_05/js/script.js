@@ -81,3 +81,61 @@ for (let i = 1901; i <= 1950; i++) {
   evenYears += ` ${i}`;
 }
 div10.innerHTML = evenYears;
+
+//task 11 ----------------------
+const div11 = document.querySelector('.div11');
+div11.innerHTML += document.querySelectorAll('.one').length;
+
+//task 12 ----------------------
+const btn12 = document.querySelector('.btn12');
+const ones = document.querySelectorAll('.one');
+
+btn12.onclick = () => {
+  for (let i = 0; i < ones.length; i++) {
+    ones[i].style.color = 'orange';
+  }
+};
+
+// task 13 --------------------
+const btn13 = document.querySelector('.btn13');
+const ones13 = document.querySelectorAll('.one');
+
+btn13.onclick = () => {
+  console.log('*');
+  for (let i = 0; i < ones13.length; i++) {
+    console.log(ones13[i].innerText);
+  }
+};
+
+// task 14 --------------------
+const btn14 = document.querySelector('.btn14');
+const textInputs = document.querySelectorAll('input[type="text"]');
+btn14.onclick = () => {
+  for (let i = 0; i < textInputs.length; i++) {
+    textInputs[i].placeholder = 'введите данные';
+  }
+};
+
+// task 15 ----------------------
+const btn15 = document.querySelector('.btn15');
+const textInputs15 = document.querySelectorAll('input[type="text"]');
+btn15.onclick = () => {
+  console.log(textInputs15.length);
+};
+
+// task 16
+const btn16 = document.querySelector('.btn16');
+const div16 = document.querySelector('.div16');
+const radios16 = document.querySelectorAll('input[type="radio"');
+
+btn16.onclick = () => {
+  for (let i = 0; i < radios16.length; i++) {
+    currentRadio = radios16[i];
+    if (currentRadio.checked) {
+      div16.innerHTML = currentRadio.value;
+      break;
+    }
+  }
+};
+
+// task 17 -----------------------
