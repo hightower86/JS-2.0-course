@@ -51,16 +51,33 @@ btn7.onclick = () => {
   div7.innerHTML = out7;
 };
 
-// task 8 --------------------
+// task 8-9 --------------------
 const inp8 = document.querySelector('.inp8');
 const inp82 = document.querySelector('.inp82');
 const btn8 = document.querySelector('.btn8');
 const div8 = document.querySelector('.div8');
+const a = +inp8.value;
+const b = +inp82.value;
 
 btn8.onclick = () => {
-  let out8 = '';
-  for (let i = +inp8.value; i <= +inp82.value; i += 1) {
-    out8 += `${i} `;
+  if (b < a) {
+    alert('второе число должно быть больше первого');
+  } else {
+    let out8 = '';
+    for (let i = a; i <= b; i += 1) {
+      out8 += `${i} `;
+    }
+    div8.innerHTML = out8;
   }
-  div8.innerHTML = out8;
 };
+
+//task 10 --------------------
+const div10 = document.querySelector('.div10');
+let evenYears = '';
+for (let i = 1901; i <= 1950; i++) {
+  if (i % 2 != 0) {
+    continue;
+  }
+  evenYears += ` ${i}`;
+}
+div10.innerHTML = evenYears;
