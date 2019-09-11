@@ -72,14 +72,14 @@ btn10.onclick = () => {
   result10.innerHTML += inp10.value * 10;
 };
 
-// Task 10 ---------------
+// Task 11 ---------------
 const inp11 = document.querySelector('.inp11');
 const btn11 = document.querySelector('.btn11');
 const result11 = document.querySelector('.result11');
 
 btn11.onclick = () => (result11.innerHTML = +inp11.value + 10);
 
-// Task 11 ----------------
+// Task 12 ----------------
 
 const inp12 = document.querySelector('.inp12');
 const inp122 = document.querySelector('.inp122');
@@ -89,77 +89,21 @@ const result12 = document.querySelector('.result12');
 btn12.onclick = () =>
   (result12.innerHTML = `Hello ${inp12.value}  ${inp122.value}`);
 
-// body.innerHTML += '<hr>';
-// body.innerHTML += '<input class="inp2">';
-// body.innerHTML += '<button class="btn2">TASK-10</<button>';
-// let inp2 = document.querySelector('.inp2');
+// Task 13 ----------------
+const inp13 = document.querySelector('.inp13');
+const inp132 = document.querySelector('.inp132');
+const btn13 = document.querySelector('.btn13');
+const result13 = document.querySelector('.result13');
 
-// document.querySelector('.btn2').onclick = function() {
-//   body.innerHTML += inp2.value * 10;
-//   inp2.value = '';
-// };
+btn13.onclick = () => (result13.innerHTML = +inp13.value + +inp132.value);
 
-// // Task 11.
-// // Создайте input и кнопку. По нажатию на кнопку
-// // выполняется функция, которая выводит на страницу
-// // число, которое ввел пользователь и к нему
-// // добавленное число 10.
+// Task 14 ----------------
+const inp14 = document.querySelector('.inp14');
+inp14.value = 'Hello';
 
-// body.innerHTML += '<hr>';
-// body.innerHTML += '<input class="inp3">';
-// body.innerHTML += '<button class="btn3">TASK-11</<button>';
-// let inp3 = document.querySelector('.inp3');
-
-// document.querySelector('.btn3').onclick = function() {
-//   body.innerHTML += inp3.value + 10;
-//   inp3.value = '';
-// };
-// // надеюсь, я правильно понял задачу. число "добавленное"
-// // считаю не одно и то же как "увеличенное"
-
-// // Task 12.
-// // Создайте два input и кнопку. В первый input пользователь
-// // вводит имя, во второе фамилию. При нажатии кнопки
-// // выполняется функция, которая выводит в консоль
-// // строку 'Hello имя фамилия', где имя - имя пользователя
-// // и фамилия - введенная фамилия.
-
-// body.innerHTML += '<hr>';
-// body.innerHTML += '<input class="name">';
-// body.innerHTML += '<input class="familyName">';
-
-// body.innerHTML += '<button class="btn4">TASK-12</<button>';
-// let name = document.querySelector('.name');
-// let familyName = document.querySelector('.familyName');
-
-// document.querySelector('.btn4').onclick = function() {
-//   body.innerHTML += `Hello ${name.value} ${familyName.value}`;
-// };
-
-// // Task 13.
-// // Создайте два input и кнопку. В input пользователь
-// // вводит числа. При нажатии кнопки выполняется функция,
-// // которая выводит сумму данных двух чисел на страницу.
-
-// body.innerHTML += '<hr>';
-// body.innerHTML += '<input class="num1">';
-// body.innerHTML += '<input class="num2">';
-
-// body.innerHTML += '<button class="btn5">TASK-13</<button>';
-// let num1 = document.querySelector('.num1');
-// let num2 = document.querySelector('.num2');
-
-// document.querySelector('.btn5').onclick = function() {
-//   body.innerHTML += +num1.value + +num2.value;
-// };
-
-// // Task 14.
-// // Создайте input и пропишите ему в html value = 77.
-// // С помощью JS измените value на 'Hello'.
-// body.innerHTML += '<hr>';
-// body.innerHTML += '<input class="task14" value="77">';
-// const inp14 = document.querySelector('.task14');
-// inp14.value = 'Hello';
+// Task 15 ----------------
+const y = document.querySelector('.inp15');
+y.style.border = '2px solid red';
 
 // // Task 15.
 // // Создайте input и получите его в переменную y.
