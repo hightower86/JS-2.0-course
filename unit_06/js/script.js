@@ -133,3 +133,78 @@ inp10.oninput = () => {
   }
   div10.innerHTML = out10;
 };
+
+// task 11 ----------------------
+const div11 = document.querySelector('.div11');
+
+let out = '';
+for (let k = 1; k <= 10; k++) {
+  for (let i = 6; i <= 7; i++) {
+    out += `${i} * ${k} = ${i * k}&nbsp &nbsp `;
+  }
+  out += '<br>';
+}
+div11.innerHTML = out;
+
+// task 12 --------------------------
+const div12 = document.querySelector('.div12');
+
+let out12 = '';
+for (let i = 1; i <= 5; i++) {
+  for (let k = 1; k <= i; k++) {
+    out12 += `${k} `;
+  }
+  out12 += '<br>';
+}
+div12.innerHTML += out12;
+
+// task 13 ----------------------
+const div13 = document.querySelector('.div13');
+let out13 = '';
+for (let i = 0; i < 50; i += 10) {
+  for (let k = 1; k <= 10; k++) {
+    out13 += i < 10 && k < 10 ? `0${i + k} &nbsp` : `${i + k} &nbsp`;
+  }
+  out13 += '<br>';
+}
+div13.innerHTML = out13;
+
+// task 14 --------------------------
+const div14 = document.querySelector('.div14');
+
+let out14 = '';
+for (let i = 5; i >= 1; i--) {
+  for (let k = i; k >= 1; k--) {
+    out14 += `${k} &nbsp`;
+  }
+  out14 += '<br>';
+}
+div14.innerHTML = out14;
+
+// task 15 ----------------------
+const div15 = document.querySelector('.div15');
+
+let out15 = '';
+
+for (let i = 1; i <= 5; i++) {
+  for (let k = 5; k > 0; k--) {
+    out15 += k <= i ? k : 'x';
+    out15 += '&nbsp ';
+  }
+  out15 += '<br>';
+}
+div15.innerHTML += out15;
+
+//task 16 --------------------
+const div16 = document.querySelector('.div16');
+
+let out16 = '';
+for (let i = 1; i <= 5; i++) {
+  for (let k = 1; k <= i; k++) {
+    out16 += i;
+    out16 += '&nbsp ';
+  }
+  out16 += '<br>';
+}
+
+div16.innerHTML = out16;
