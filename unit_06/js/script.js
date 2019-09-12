@@ -208,3 +208,66 @@ for (let i = 1; i <= 5; i++) {
 }
 
 div16.innerHTML = out16;
+
+//task 17 --------------------
+const div17 = document.querySelector('.div17');
+
+let out17 = '';
+for (let i = 5; i >= 1; i--) {
+  for (let k = 5; k >= i; k--) {
+    out17 += i;
+    out17 += '&nbsp ';
+  }
+  out17 += '<br>';
+}
+
+div17.innerHTML = out17;
+
+//task 18 ----------------------
+const div18 = document.querySelector('.div18');
+
+let out18 = '';
+for (let i = 5; i >= 1; i--) {
+  for (let k = 5; k >= i; k--) {
+    out18 += i % 2 != 0 ? i : 'x';
+    out18 += '&nbsp ';
+  }
+  out18 += '<br>';
+}
+
+div18.innerHTML = out18;
+
+// task 19 ------------------
+const div19 = document.querySelector('.div19');
+let out19 = '';
+for (let i = 5; i <= 9; i += 2) {
+  const prefixLength = (9 - i) / 2;
+  for (let p = 0; p < prefixLength; p++) {
+    out19 += '&nbsp ';
+  }
+
+  for (let k = 0; k < i; k++) {
+    out19 += '*';
+  }
+  out19 += '<br>';
+}
+div19.innerHTML = out19;
+
+// task 20 ------------------------
+const div20 = document.querySelector('.div20');
+
+const figureWidth = 12;
+const step = 2;
+let out20 = '';
+for (let i = step; i < figureWidth; i += step) {
+  const x = i < figureWidth / 2 ? i : figureWidth - i;
+  const prefix = (figureWidth / 2 - x) / 2;
+  for (let p = 0; p < prefix; p++) {
+    out20 += '&nbsp ';
+  }
+  for (let k = 1; k <= x; k += 1) {
+    out20 += '*';
+  }
+  out20 += '<br>';
+}
+div20.innerHTML = out20;
