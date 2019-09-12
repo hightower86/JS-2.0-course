@@ -41,3 +41,39 @@ for (let i = 0; i < 3; i++) {
   out4 += '<br>';
 }
 div4.innerHTML = out4;
+
+// task 5 ------------------------
+const div5 = document.querySelector('.div5');
+out5 = '';
+for (let i = 1; i < 4; i++) {
+  for (let k = 0; k < i; k++) {
+    out5 += '*';
+  }
+  out5 += '<br>';
+}
+div5.innerHTML = out5;
+
+// task 6 ------------------------
+const div6 = document.querySelector('.div6');
+let out6 = '';
+for (let i = 5; i > 0; i--) {
+  for (let k = 0; k < i; k++) {
+    out6 += '*';
+  }
+  out6 += '<br>';
+}
+div6.innerHTML = out6;
+
+// task 7 ------------------------
+const div7 = document.querySelector('.div7');
+let out7 = '';
+for (let i = 3; i > 0; i--) {
+  for (let m = 0; m < i; m++) {
+    out7 += '&nbsp';
+  }
+  for (let k = 0; k < 5; k++) {
+    out7 += '*';
+  }
+  out7 += '<br>';
+}
+div7.innerHTML = out7;
