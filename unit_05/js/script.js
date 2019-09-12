@@ -139,3 +139,47 @@ btn16.onclick = () => {
 };
 
 // task 17 -----------------------
+btn17 = document.querySelector('.btn17');
+
+btn17.onclick = () => {
+  radios16[0].checked = true;
+};
+
+// task 18 ------------------------
+const btn18 = document.querySelector('.btn18');
+const radios18 = document.getElementsByName('p1');
+console.log(radios18);
+btn18.onclick = () => {
+  for (let i = 0; i < radios18.length; i++) {
+    radios18[i].value = i;
+  }
+};
+
+// task 19 ------------------------
+const btn19 = document.querySelector('.btn19');
+const radios19 = document.getElementsByName('p2');
+const div19 = document.querySelector('.div19');
+
+btn19.onclick = () => {
+  for (let i = 0; i < radios19.length; i++) {
+    const currentRadio19 = radios19[i];
+    if (!currentRadio19.checked) {
+      continue;
+    } else if (+currentRadio19.value !== 6) {
+      div19.innerHTML = false;
+    } else {
+      div19.innerHTML = true;
+    }
+  }
+};
+
+// task 20 -------------------------
+const radios20 = document.getElementsByName('p3');
+
+const onInput = () => {
+  console.log('был изменен input');
+};
+
+for (let i = 0; i < radios20.length; i++) {
+  radios20[i].oninput = onInput;
+}
