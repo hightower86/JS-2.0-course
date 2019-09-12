@@ -69,7 +69,7 @@ const div7 = document.querySelector('.div7');
 let out7 = '';
 for (let i = 3; i > 0; i--) {
   for (let m = 0; m < i; m++) {
-    out7 += '&nbsp';
+    out7 += '&nbsp ';
   }
   for (let k = 0; k < 5; k++) {
     out7 += '*';
@@ -77,3 +77,59 @@ for (let i = 3; i > 0; i--) {
   out7 += '<br>';
 }
 div7.innerHTML = out7;
+
+// task 8 ------------------------
+const div8 = document.querySelector('.div8');
+let out8 = '';
+const numberOfRows = 5;
+for (let i = 1; i <= numberOfRows; i++) {
+  for (let k = 0; k < (i <= 3 ? i : 6 - i); k++) {
+    out8 += '*';
+  }
+  out8 += '<br>';
+}
+div8.innerHTML = out8;
+
+// task 9 ----------------------------
+const div9 = document.querySelector('.div9');
+
+let out9 = '';
+for (let i = 1; i <= 5; i++) {
+  for (let k = 1; k <= 6; k++) {
+    if (i === 1 || i === 5) {
+      out9 += '*';
+    } else {
+      if (k === 1 || k === 6) {
+        out9 += '*';
+      } else {
+        out9 += '&nbsp ';
+      }
+    }
+  }
+  out9 += '<br>';
+}
+div9.innerHTML = out9;
+
+// task 10 ----------------------------
+const div10 = document.querySelector('.div10');
+const inp10 = document.querySelector('.inp10');
+
+inp10.oninput = () => {
+  const sym = inp10.value;
+  let out10 = '';
+  for (let i = 1; i <= 5; i++) {
+    for (let k = 1; k <= 6; k++) {
+      if (i === 1 || i === 5) {
+        out10 += sym;
+      } else {
+        if (k === 1 || k === 6) {
+          out10 += sym;
+        } else {
+          out10 += '&nbsp ';
+        }
+      }
+    }
+    out10 += '<br>';
+  }
+  div10.innerHTML = out10;
+};
