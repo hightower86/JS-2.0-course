@@ -188,7 +188,7 @@ let out15 = '';
 
 for (let i = 1; i <= 5; i++) {
   for (let k = 5; k > 0; k--) {
-    out15 += k <= i ? k : 'x';
+    out15 += k <= i ? k : 'X';
     out15 += '&nbsp ';
   }
   out15 += '<br>';
