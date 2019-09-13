@@ -151,9 +151,20 @@ function func_8() {
 // console.log(func_8());
 
 // Task 9
-// Создайте функцию func_9, которая принимает 2 параметра и возращает строку от первого до второго введенного параграфа, где все четные числа заменены на символ нуля(0).
+// Создайте функцию func_9, которая принимает 2 параметра и
+// возращает строку от первого до второго введенного параграфа,
+// где все четные числа заменены на символ нуля(0).
 
-function func_9(a, b) {}
+function func_9(a, b) {
+  let i = a;
+  let result = '';
+  while (i <= b) {
+    result += i % 2 === 0 ? '0 ' : `${i} `;
+    i++;
+  }
+  return result;
+}
+//console.log(func_9(3, 10)); // 3 0 5 0 7 0 9 0
 
 // Task 10
 // Cоздайте функцию func_10, которая вернет строку(решаем через
@@ -165,13 +176,34 @@ function func_9(a, b) {}
 //     **
 //     *
 
-function func_10() {}
+function func_10() {
+  let i = 0;
+  result = '';
+  while (i < 6) {
+    result += i % 2 !== 0 ? '* ' : '** ';
+    result += '\n';
+    i++;
+  }
+  return result;
+}
+//console.log(func_10());
 
 // Task 11
-// Создайте функцию func_11, которая вернет следующую строку: 10 1 9 2 8 3. .0 10. Решаем через
-// while.
+// Создайте функцию func_11, которая вернет следующую строку:
+// 10 1 9 2 8 3. .0 10. Решаем через while.
 
-function func_11() {}
+function func_11() {
+  let i = 1;
+  let k = 10;
+  result = '';
+  while (i <= 10) {
+    result += `${k} ${i} `;
+    i += 1;
+    k -= 1;
+  }
+  return result;
+}
+//console.log(func_11());
 
 // Task 12
 // Прочитайте о цикле <a href = "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Statements/do...while"
@@ -186,12 +218,25 @@ function func_11() {}
 //     console.log('while work');
 // }
 
-// изучите вывод.Как видите, цикл do while срабатывает минимум один раз в любом случае.Т.е.вначале идет срабатывание, а потом проверка.
+// изучите вывод.Как видите, цикл do while срабатывает минимум
+// один раз в любом случае.Т.е.вначале идет срабатывание,
+// а потом проверка.
 
-function func_12() {}
+function func_12() {
+  let a = 0;
+  do console.log('do while work');
+  while (a < 0);
+
+  let b = 0;
+  while (b < 0) {
+    console.log('while work');
+  }
+}
+//console.log(func_12());
 
 // Task 13
-// Напишите функцию func_13 которая возвращает строку, от 100 до 0 включительно.Используем цикл do while.
+// Напишите функцию func_13 которая возвращает строку, от 100 до 0
+// включительно.Используем цикл do while.
 
 function func_13() {}
 
