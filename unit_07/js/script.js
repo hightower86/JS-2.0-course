@@ -39,8 +39,6 @@ const f5 = () => {
   return inp5.value;
 };
 
-//inp5.oninput = () => console.log(f5());
-
 // task 6 ------------------------
 const f6 = (num1, num2) => {
   return num1 >= num2 ? num1 : num2;
@@ -83,5 +81,38 @@ const f13 = inp => {
 const isEven = num => num % 2 === 0;
 
 // task 15 ----------------------
-const div15 = document.querySelector('.task15');
+const div15 = document.querySelector('.div15');
 div15.onmousemove = () => console.log('move');
+
+// task 16 ----------------------
+const div16 = document.querySelector('.div16');
+div16.onmouseenter = () => console.log('enter');
+
+// task 17 ------------------------
+
+const div17 = document.querySelector('.div17');
+div17.onmouseleave = () => console.log('leave');
+
+// task 18 ------------------------
+
+const div18 = document.querySelector('.div18');
+div18.onclick = function() {
+  this.style.background = 'red';
+};
+
+// task 19 ------------------------
+
+const div19 = document.querySelector('.div19');
+div19.onclick = () => {
+  this.style.background = 'red';
+};
+
+// task 20 --------------------------
+const divsGo = document.querySelectorAll('.go');
+
+for (let i = 0; i < divsGo.length; i++) {
+  const div = divsGo[i];
+  div.onclick = function() {
+    this.style.background = 'red';
+  };
+}
