@@ -1,6 +1,13 @@
-html, body {
-    font-family: serif;
+html,
+body {
+  font-family: serif;
 }
 body {
-    margin: 20px;
+  margin: 20px;
+}
+
+.task15 {
+  border: 1px solid #000;
+  border-radius: 3px;
+  padding: 0 5px;
 }

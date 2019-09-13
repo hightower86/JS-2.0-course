@@ -62,6 +62,26 @@ const f9 = (min, max) => {
 };
 
 // task 10 ------------------------
-const f10 = () => {
-  return `rgb(${f9(0, 255)},${f9(0, 255)},${f9(0, 255)})`;
+const f10 = () => `rgb(${f9(0, 255)},${f9(0, 255)},${f9(0, 255)})`;
+
+// task 11 ------------------------
+const f11 = () => 5;
+
+const newF11 = (a, b) => a * b;
+console.log(newF11(f11(), 10));
+
+// task 12 ----------------------
+const toNum = inp => +inp.value;
+
+// task 13 ----------------------
+const f13 = inp => {
+  const val = inp.value.trim();
+  return val === '' ? false : val;
 };
+
+// task 14 ----------------------
+const isEven = num => num % 2 === 0;
+
+// task 15 ----------------------
+const div15 = document.querySelector('.task15');
+div15.onmousemove = () => console.log('move');
