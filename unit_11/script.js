@@ -53,3 +53,80 @@ btn8.onclick = () => {
   div8.innerHTML += `  length: ${a8.length}`;
   console.log(a8, a8.length);
 };
+
+// task 9 ------------------------------
+const btn9 = document.querySelector('.btn9');
+a9 = [1, 23, 456, 23, 45, 9, 10, 'a', 'tnt', false];
+btn9.onclick = () => {
+  console.log(a9[2]);
+  console.log(a9[6]);
+  console.log(a9);
+};
+
+// task 10 --------------------------------
+const btn10 = document.querySelector('.btn10');
+const div10 = document.querySelector('.div10');
+a10 = [1, , , , 45, , , , , false];
+btn10.onclick = () => {
+  div10.innerHTML = a10;
+  div10.innerHTML += `  length = ${a10.length}`;
+  console.log(a10, a10.length);
+};
+
+// task 11 --------------------------
+const btn11 = document.querySelector('.btn11');
+const c = [77, 88, 99, 66];
+
+btn11.onclick = () => {
+  const a = c[0];
+  c[0] = c[2];
+  c[2] = a;
+  console.log(c);
+};
+
+// task 12 --------------------------
+const btn12 = document.querySelector('.btn12');
+
+const changeArray = array => {
+  let firstElement = array[0];
+  let lastElement = array[array.length - 1];
+  array[0] = lastElement;
+  array[array.length - 1] = firstElement;
+  console.log(array);
+};
+
+btn12.onclick = () => changeArray([1, 2, 3, 4, 5, 6]);
+
+// task 13 --------------------------
+const btn13 = document.querySelector('.btn13');
+const div13 = document.querySelector('.div13');
+const d = ['y', 4, 22, 'o'];
+
+btn13.onclick = () => {
+  for (let index = 0; index < d.length; index++) {
+    div13.innerHTML += element = d[index] + ' ';
+  }
+};
+
+// task 14 ------------------------
+const btn14 = document.querySelector('.btn14');
+const div14 = document.querySelector('.div14');
+const e = [1, 2, 3, 'hello', 66];
+
+btn14.onclick = () => {
+  div14.innerHTML = '';
+  for (let i = e.length - 1; i >= 0; i--) {
+    div14.innerHTML += `${e[i]} `;
+  }
+};
+
+// task 15 ----------------------------
+const btn15 = document.querySelector('.btn15');
+const div15 = document.querySelector('.div15');
+const d15 = [0, 2, 5, -4, 6, 22, -9, -12, 8, 12, 13, 78];
+btn15.onclick = () => {
+  for (let i = 0; i < d15.length; i++) {
+    const el = d15[i];
+    div15.innerHTML += el > 0 ? `${el} ` : '';
+  }
+};
