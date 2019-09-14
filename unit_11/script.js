@@ -130,3 +130,21 @@ btn15.onclick = () => {
     div15.innerHTML += el > 0 ? `${el} ` : '';
   }
 };
+
+// task 16 ------------------------------
+const btn16 = document.querySelector('.btn16');
+const div16 = document.querySelector('.div16');
+
+btn16.onclick = () => {
+  const [a1, a2] = [[], []];
+  for (let i = 0; i < d15.length; i++) {
+    const el = d15[i];
+    if (el % 2 === 0) {
+      a1.push(el);
+    } else {
+      a2.push(el);
+    }
+  }
+  div16.innerHTML = `четные: ${a1} `;
+  div16.innerHTML += ` НЕчетные: ${a2}`;
+};
