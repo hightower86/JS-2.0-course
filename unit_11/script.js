@@ -148,3 +148,56 @@ btn16.onclick = () => {
   div16.innerHTML = `четные: ${a1} `;
   div16.innerHTML += ` НЕчетные: ${a2}`;
 };
+
+// task 17 -----------------------------
+const btn17 = document.querySelector('.btn17');
+let e17 = [3, 0, 2, 6, 0, 1, 3, 1, 9, 0, 2, 0];
+btn17.onclick = () => {
+  let zeros = 0;
+  for (let i = 0; i < e17.length; i++) {
+    const elem = e17[i];
+    zeros += elem === 0 ? 1 : 0;
+  }
+  console.log(zeros);
+};
+
+// task 18 ------------------------------
+const btn18 = document.querySelector('.btn18');
+btn18.onclick = () => {
+  let max = e17[0];
+  for (let i = 0; i < e17.length; i++) {
+    const elem = e17[i];
+    max = elem > max ? elem : max;
+  }
+  console.log(max);
+};
+
+// task 19 ----------------------------
+const btn19 = document.querySelector('.btn19');
+let f = [-3, 0, 45, 22, 123, -485, 98, 34];
+
+btn19.onclick = () => {
+  let idx = 0;
+  let max = f[0];
+  for (let i = 0; i < f.length; i++) {
+    const elem = f[i];
+    if (elem > max) {
+      idx = i;
+      max = elem;
+    }
+  }
+  console.log(idx);
+};
+
+// task 20 --------------------------
+const btn20 = document.querySelector('.btn20');
+
+btn20.onclick = () => {
+  let i = 0;
+  let sum = 0;
+  while (i < f.length) {
+    sum += f[i];
+    i++;
+  }
+  console.log(sum);
+};
