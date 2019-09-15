@@ -205,3 +205,35 @@ function func_16() {
 }
 
 btn16.onclick = func_16;
+
+// task 17 ----------------------------
+const task17 = document.querySelector('.task-17');
+const u17 = document.querySelector('.u-17');
+const btn17 = document.querySelector('.btn17');
+
+const func_17 = () => {
+  const p17 = document.createElement('p');
+  p17.textContent = '17';
+  task17.replaceChild(p17, u17);
+};
+
+btn17.onclick = func_17;
+
+// task 18 --------------------------
+const out18 = document.querySelector('.out-18');
+const btn18 = document.querySelector('.btn18');
+
+function func_18() {
+  //console.log(this);
+  this.remove();
+}
+
+outs18 = document.querySelectorAll('.out-18');
+//console.log(outs18);
+for (let i = 0; i < outs18.length; i++) {
+  const div18 = outs18[i];
+  //console.log(div18);
+  div18.onclick = func_18;
+}
+
+//btn18.onclick = func_18;
