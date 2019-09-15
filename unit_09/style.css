@@ -10,8 +10,24 @@ button {
   height: 2rem;
 }
 .result {
-  background-color: rgb(237, 238, 163);
+  background-color: rgba(184, 184, 183, 0.5);
   padding: 5px;
   margin-bottom: 10px;
   font-family: Verdana, Geneva, sans-serif;
+  min-height: 20px;
+}
+button:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.css-1 {
+  background-color: greenyellow;
+}
+.css-2 {
+  background-color: rgb(101, 81, 212);
+}
+.css-3 {
+  background-color: #fff;
 }
