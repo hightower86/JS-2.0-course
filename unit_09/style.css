@@ -31,3 +31,9 @@ button:hover {
 .css-3 {
   background-color: #fff;
 }
+.active {
+  color: red;
+}
+.active:hover {
+  color: red;
+}

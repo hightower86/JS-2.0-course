@@ -60,8 +60,59 @@ for (let i = 0; i < 3; i++) {
 }
 
 const pu5s = document.querySelectorAll('.pu-5');
-console.log(pu5s);
 for (let i = 0; i < pu5s.length; i++) {
   const pu5 = pu5s[i];
   pu5.onclick = func_5;
+}
+
+// task 6 --------------------------
+const btn6 = document.querySelector('.btn6');
+const onClick6 = function() {
+  this.classList.toggle('active');
+};
+btn6.onclick = onClick6;
+
+// task 7 ----------------------------
+const btn7 = document.querySelector('.btn7');
+
+function func_7() {
+  console.log(document.querySelectorAll('.css-3').length);
+}
+btn7.onclick = func_7;
+
+// task 8 --------------------------
+const btn8 = document.querySelector('.btn8');
+const u1s = document.querySelectorAll('.u-1');
+
+function func_8() {
+  for (let i = 0; i < u1s.length; i++) {
+    const u1 = u1s[i];
+    u1.setAttribute('title', 'test-data');
+  }
+}
+
+btn8.onclick = func_8;
+
+// task 9 ------------------------
+const buttons9 = document.querySelectorAll('.u-9');
+
+for (let i = 0; i < buttons9.length; i++) {
+  const button = buttons9[i];
+  button.onclick = function() {
+    console.log(this.getAttribute('data'));
+  };
+}
+
+// task 10 --------------------------------
+const btns10 = document.querySelectorAll('.u-10');
+const out10 = document.querySelector('.u-10_out');
+
+function func10() {
+  out10.innerHTML = this.getAttribute('data-currency');
+}
+
+for (let i = 0; i < btns10.length; i++) {
+  const btn = btns10[i];
+
+  btn.onclick = func10;
 }
