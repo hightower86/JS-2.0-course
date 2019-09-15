@@ -9,6 +9,9 @@ body {
 button {
   height: 2rem;
 }
+input {
+  height: 25px;
+}
 .result {
   background-color: rgba(184, 184, 183, 0.5);
   padding: 5px;
@@ -30,6 +33,9 @@ button:hover {
 }
 .css-3 {
   background-color: #fff;
+}
+.css-4 {
+  background-color: rgb(110, 204, 101);
 }
 .active {
   color: red;

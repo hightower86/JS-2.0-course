@@ -116,3 +116,63 @@ for (let i = 0; i < btns10.length; i++) {
 
   btn.onclick = func10;
 }
+
+// task 11 ------------------------------
+const out11 = document.querySelector('.u-11_out');
+const btns11 = document.querySelectorAll('.u-11_button');
+const inp11 = document.querySelector('.u-11_input');
+
+function func_11() {
+  out11.innerHTML = this.getAttribute('data-currency') * +inp11.value;
+}
+
+for (let i = 0; i < btns11.length; i++) {
+  const btn = btns11[i];
+  btn.onclick = func_11;
+}
+
+// task 12 ----------------------------
+const div12 = document.querySelector('.div12');
+const btn12 = document.querySelector('.btn12');
+
+function func_12() {
+  const newDiv = document.createElement('div');
+  newDiv.innerHTML = 'newDiv';
+  newDiv.classList.add('css-4');
+  return newDiv;
+}
+
+btn12.onclick = () => {
+  div12.appendChild(func_12());
+};
+
+// task 13 ---------------------
+const div13 = document.querySelector('.div13');
+const btn13 = document.querySelector('.btn13');
+const u13 = document.querySelector('.u-13');
+
+function func_13() {
+  const span13 = document.createElement('span');
+  span13.textContent = ' 13 ';
+  span13.classList.add('span-13');
+  u13.append(span13);
+}
+
+btn13.onclick = func_13;
+
+// task 14 ------------------------
+const div14 = document.querySelector('.div14');
+const btn14 = document.querySelector('.btn14');
+const pu14 = document.createElement('p');
+pu14.classList.add('u-14');
+div14.appendChild(pu14);
+
+function func_14() {
+  console.log('func');
+  const span14 = document.createElement('span');
+  span14.classList.add('span-14');
+  span14.textContent = ' 14 ';
+  pu14.prepend(span14);
+}
+
+btn14.onclick = func_14;
