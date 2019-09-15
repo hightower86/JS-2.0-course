@@ -1,0 +1,17 @@
+html,
+body {
+  font-family: serif;
+}
+body {
+  margin: 20px;
+}
+
+button {
+  height: 2rem;
+}
+.result {
+  background-color: rgb(237, 238, 163);
+  padding: 5px;
+  margin-bottom: 10px;
+  font-family: Verdana, Geneva, sans-serif;
+}
