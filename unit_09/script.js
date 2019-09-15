@@ -176,3 +176,32 @@ function func_14() {
 }
 
 btn14.onclick = func_14;
+
+// task 15 ------------------------------
+const btn15 = document.querySelector('.btn15');
+const div15 = document.querySelector('.div15');
+const p15 = document.querySelector('.u-15');
+
+function func_15() {
+  const span = document.createElement('span');
+  span.classList.add('span-15');
+  span.textContent = ' 15 ';
+  p15.before(span);
+}
+
+btn15.onclick = func_15;
+
+// task 16 ----------------------------
+div16 = document.querySelector('.div16');
+btn16 = document.querySelector('.btn16');
+
+function func_16() {
+  const btn = document.createElement('button');
+  btn.innerHTML = 'Push';
+  btn.onclick = () => {
+    console.log('u-16');
+  };
+  div16.appendChild(btn);
+}
+
+btn16.onclick = func_16;
