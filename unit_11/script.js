@@ -178,3 +178,35 @@ const funcReverse = () => {
 };
 
 btn13.onclick = funcReverse;
+
+// task 14 ---------------------------
+const div14 = document.querySelector('.div14');
+const inp14 = document.querySelector('.inp14');
+const btn14 = document.querySelector('.btn14');
+
+btn14.onclick = () => {
+  const newArr14 = [];
+  val14 = +inp14.value;
+
+  for (let i = 0; i < val14; i++) {
+    newArr14[i] = Math.floor(Math.random() * 100);
+  }
+  div14.textContent = newArr14;
+};
+
+// task 15 ------------------------------
+let arr15 = [1, 2, 3, 4, 5, 6, 7, 88, 77];
+
+const div15 = document.querySelector('.div15');
+const btn15 = document.querySelector('.btn15');
+
+btn15.onclick = () => {
+  newArr15 = [];
+  for (let i = 0; i < arr15.length; i++) {
+    const element = arr15[i];
+    if (i % 2 === 0) {
+      newArr15.push(element);
+    }
+  }
+  div15.textContent = newArr15;
+};
