@@ -45,3 +45,49 @@ btn5.onclick = () => {
   arr5.splice(+inp5.value, +inp52.value);
   div5.textContent = arr5;
 };
+
+// task 6 -----------------------------
+const btn6 = document.querySelector('.btn6');
+const inp6 = document.querySelector('.inp6');
+const div6 = document.querySelector('.div6');
+
+let arr6 = [];
+const funcPush = () => {
+  const val = inp6.value.trim();
+  const arrSize = arr6.length;
+  arr6[arrSize] = val;
+  div6.textContent = arr6;
+};
+
+btn6.onclick = funcPush;
+
+// task 7 -----------------------------
+const btn7 = document.querySelector('.btn7');
+const div7 = document.querySelector('.div7');
+
+let arr7 = [32, 45, 't', 456, 'ft', 988];
+div7.textContent = arr7;
+const funcPop7 = () => {
+  if (arr7.length > 0) arr7.length -= 1;
+  div7.textContent = arr7;
+};
+
+btn7.onclick = funcPop7;
+
+// task 8 --------------------------------
+const btn8 = document.querySelector('.btn8');
+const div8 = document.querySelector('.div8');
+let arr8 = [1, 2, 3, 4, 5, 6, 7, 8];
+div8.textContent = arr8;
+
+const funcShift = () => {
+  const newArr = [];
+  for (let i = 1; i < arr8.length; i++) {
+    newArr[i - 1] = arr8[i];
+    console.log(newArr);
+  }
+  arr8 = newArr;
+  div8.textContent = newArr;
+};
+
+btn8.onclick = funcShift;
