@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <div>
+    <div class="task">
       <p>
         Task 1. Создайте пустой массив arr1, input.u-1, кнопку button.u-2__push.
         При нажатии кнопки, функция читает содержимое input и добавляет
@@ -17,9 +17,55 @@
       </p>
       <div class="div1 result"></div>
       <input type="text" class="inp1" />
-      <button class="btn1">button</button>
+      <button class="btn1">push</button>
+      <button class="btn1-pop">pop</button>
+      <button class="btn1-shift">shift</button>
+      <button class="btn1-unshift">unshift</button>
     </div>
     <hr />
+
+    <div class="task">
+      <p>
+        Task 2. Добавьте к предыдущему заданию кнопку button.u-2__pop, при
+        нажатии которой, к массиву arr1 применяется метод pop, после чего массив
+        выводится в div.out-1
+      </p>
+    </div>
+    <hr />
+    <div class="task">
+      <p>
+        Task 3. Добавьте к заданию 1 кнопку button.u-3__shift, которая применяет
+        к массиву arr1 метод shift ( читать за метод shift). После применения
+        shift, массив arr1 выподится в div.out-1.
+      </p>
+    </div>
+    <hr />
+    <div class="task">
+      <p>
+        Task 4. Добавьте к заданию 1 кнопку button.u-4__unshift, которая
+        применяет к массиву arr1 метод unshift ( читать за метод unshift). После
+        применения unshift, массив arr1 выподится в div.out-1. Надеюсь, вы
+        догадаетесь проверять input на пустоту перед применением unshift.
+        Надеюсь, вы это сделали и в первой задаче?
+      </p>
+    </div>
+    <hr />
+
+    <div class="task">
+      <p>
+        Task 5. Обьявите массив arr5, добате два элемента input, в первый
+        пользователь может ввести индекс элемента, во второй - количество.
+        Добавьте кнопку, по нажатию на которую к массиву arr5 применяется метод
+        splice. Результат применения выводите в div.out-5.
+      </p>
+      <pre>
+let arr5 = [3,14, 15, 92, 6, 54, 123, 87, 66, 43, 12, 90, 'hello'];
+      </pre>
+      <div class="div5 result"></div>
+      <input type="number" class="inp5" />
+      <input type="number" class="inp52" />
+      <button class="btn5">splice</button>
+    </div>
 
     <script src="script.js"></script>
   </body>

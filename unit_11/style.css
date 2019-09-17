@@ -22,3 +22,11 @@ button {
 button:hover {
   background-color: #999;
 }
+pre {
+  background-color: rgb(231, 248, 209);
+}
+
+.inp5,
+.inp52 {
+  width: 30px;
+}
