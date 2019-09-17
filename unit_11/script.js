@@ -65,7 +65,7 @@ btn6.onclick = funcPush;
 const btn7 = document.querySelector('.btn7');
 const div7 = document.querySelector('.div7');
 
-let arr7 = [32, 45, 't', 456, 'ft', 988];
+let arr7 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 div7.textContent = arr7;
 const funcPop7 = () => {
   if (arr7.length > 0) arr7.length -= 1;
@@ -87,7 +87,41 @@ const funcShift = () => {
     console.log(newArr);
   }
   arr8 = newArr;
-  div8.textContent = newArr;
+  div8.textContent = arr8;
 };
 
 btn8.onclick = funcShift;
+
+// task 9 --------------------------
+const div9 = document.querySelector('.div9');
+const inp9 = document.querySelector('.inp9');
+const btn9 = document.querySelector('.btn9');
+
+const isInput9Empty = inp9.value.trim().length === 0;
+
+let arr9 = [];
+const funcUnShift = () => {
+  if (isInput9Empty) {
+    alert('input is empty!');
+    return;
+  }
+  const newArr9 = [inp9.value];
+  for (let i = 0; i < arr9.length; i++) {
+    const element = arr9[i];
+    newArr9[i + 1] = element;
+  }
+  arr9 = newArr9;
+  div9.textContent = arr9;
+};
+
+btn9.onclick = funcUnShift;
+
+// task 10 ----------------------------
+let arr10 = [2, 4, 6, 8, 10, 'hello'];
+const div10 = document.querySelector('.div10');
+const btn10 = document.querySelector('.btn10');
+
+btn10.onclick = () => {
+  arr10.reverse();
+  div10.textContent = arr10;
+};
