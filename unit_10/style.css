@@ -1,0 +1,19 @@
+html,
+body {
+  font-family: serif;
+}
+body {
+  margin: 20px;
+}
+div {
+  margin-top: 10px;
+  font-family: Verdana, Geneva, sans-serif;
+}
+button {
+  height: 30px;
+  margin-top: 10px;
+}
+pre {
+  background-color: rgb(229, 231, 192);
+  padding: 7px;
+}

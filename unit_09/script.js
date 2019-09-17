@@ -224,16 +224,43 @@ const out18 = document.querySelector('.out-18');
 const btn18 = document.querySelector('.btn18');
 
 function func_18() {
-  //console.log(this);
   this.remove();
 }
 
 outs18 = document.querySelectorAll('.out-18');
-//console.log(outs18);
 for (let i = 0; i < outs18.length; i++) {
   const div18 = outs18[i];
-  //console.log(div18);
   div18.onclick = func_18;
 }
 
-//btn18.onclick = func_18;
+// task 19 ----------------------------
+const div19 = document.querySelector('.div19');
+const btn19 = document.querySelector('.btn19');
+const ul19 = document.querySelector('.ul-19');
+
+const func_19 = str => {
+  const li = document.createElement('li');
+  li.textContent = str;
+  ul19.appendChild(li);
+};
+
+btn19.onclick = () => func_19('new li');
+
+// task 20 ------------------------------
+
+const div20 = document.querySelector('.div20');
+const btn20 = document.querySelector('.btn20');
+const ul20 = document.querySelector('.ul-20');
+const inp20 = document.querySelector('.inp20');
+const box20 = document.querySelector('.box20');
+
+const func_20 = (str, box) => {
+  const li = document.createElement('li');
+  li.textContent = str;
+  if (box) {
+    li.classList.add('css-5');
+  }
+  ul20.appendChild(li);
+};
+
+btn20.onclick = () => func_20(inp20.value, box20.checked);

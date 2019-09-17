@@ -37,6 +37,9 @@ button:hover {
 .css-4 {
   background-color: rgb(110, 204, 101);
 }
+.css-5 {
+  color: rgb(223, 7, 7);
+}
 .active {
   color: red;
 }

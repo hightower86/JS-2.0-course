@@ -5,15 +5,20 @@ body {
 body {
   margin: 20px;
 }
-div {
-  margin-top: 10px;
-  font-family: Verdana, Geneva, sans-serif;
-}
-button {
+
+.result {
   height: 30px;
-  margin-top: 10px;
+  width: 100%;
+  background-color: rgb(243, 230, 230);
+  margin-bottom: 5px;
+  text-align: center;
+  padding-top: 5px;
 }
-pre {
-  background-color: rgb(229, 231, 192);
-  padding: 7px;
+
+button {
+  height: 24px;
+  background-color: rgb(237, 248, 185);
+}
+button:hover {
+  background-color: #999;
 }
