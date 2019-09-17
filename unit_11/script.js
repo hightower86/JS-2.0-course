@@ -125,3 +125,56 @@ btn10.onclick = () => {
   arr10.reverse();
   div10.textContent = arr10;
 };
+
+// task 11 ------------------------------
+let arr11 = [0, 2, 3, 7, 8, 5, 11];
+
+const div11 = document.querySelector('.div11');
+const inp11 = document.querySelector('.inp11');
+const btn11 = document.querySelector('.btn11');
+
+btn11.onclick = () => {
+  const u11 = +inp11.value.trim();
+  div11.textContent = arr11.indexOf(u11);
+};
+
+// task 12 ------------------------------
+const div12 = document.querySelector('.div12');
+const inp12 = document.querySelector('.inp12');
+const btn12 = document.querySelector('.btn12');
+let arr12 = [0, 2, 3, 7, 8, 5, 11];
+
+const funcIndexOf = () => {
+  const val = +inp12.value;
+
+  for (let i = 0; i < arr12.length; i++) {
+    const element = arr12[i];
+    if (element === val) {
+      div12.textContent = i;
+      return;
+    }
+  }
+  div12.textContent = -1;
+};
+
+btn12.onclick = funcIndexOf;
+
+// task 13 ------------------------------
+const div13 = document.querySelector('.div13');
+const inp13 = document.querySelector('.inp13');
+const btn13 = document.querySelector('.btn13');
+
+let arr13 = [1, 2, 3, 4, 5, 6, 7, 8];
+
+const funcReverse = () => {
+  const newArr13 = [];
+  let idx = 0;
+  for (let i = arr13.length - 1; i >= 0; i--) {
+    const element = arr13[i];
+    newArr13[idx] = element;
+    idx++;
+  }
+  div13.textContent = newArr13;
+};
+
+btn13.onclick = funcReverse;
