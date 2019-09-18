@@ -114,8 +114,72 @@ btn10.onclick = () => {
 };
 
 // task 11 ------------------------------
+const div11 = document.querySelector('.div11');
+const btn11 = document.querySelector('.btn11');
+let out11 = '';
+let arr11 = []; // будем все помещать в этот массив
+let c = 0;
+let first = 0; // это триггер первого символа каждой строки
+btn11.onclick = () => {
+  for (let i = 0; i < 8; i++) {
+    arr11[i] = [];
+    for (let k = 0; k < 8; k++) {
+      if (k === 0) {
+        // проверяем первый символ вложенных массивов-строк
+        if (first === 0) {
+          first = first === 0 ? 1 : 0; // переключаем триггер первого символа очередной строки
+          c = first === 0 ? 1 : 0; // заполняем первый символ в соответствии с триггером
+        }
+      } else {
+        c = c === 0 ? 1 : 0; // переключаем остальные символы в строке
+      }
+
+      arr11[i].push(c);
+    }
+    out11 += arr11[i] + '<br>';
+  }
+  div11.innerHTML = out11;
+};
 
 // task 12 ------------------------------
+const div12 = document.querySelector('.div12');
+const btn12 = document.querySelector('.btn12');
+const white = document.createElement('div');
+white.classList.add('white');
+const black = document.createElement('div');
+black.classList.add('black');
+
+arr12 = [
+  [1, 0, 1, 0, 1, 0, 1, 0],
+  [0, 1, 0, 1, 0, 1, 0, 1],
+  [1, 0, 1, 0, 1, 0, 1, 0],
+  [0, 1, 0, 1, 0, 1, 0, 1],
+  [1, 0, 1, 0, 1, 0, 1, 0],
+  [0, 1, 0, 1, 0, 1, 0, 1],
+  [1, 0, 1, 0, 1, 0, 1, 0],
+  [0, 1, 0, 1, 0, 1, 0, 1]
+];
+
+btn12.onclick = () => {
+  div12.innerHTML = '';
+  for (let i = 0; i < arr12.length; i++) {
+    divRaw = document.createElement('div');
+    divRaw.classList.add('raw');
+    div12.append(divRaw);
+
+    for (let k = 0; k < arr12[i].length; k++) {
+      const el = arr12[i][k];
+
+      const white = document.createElement('div');
+      white.classList.add('white');
+      const black = document.createElement('div');
+      black.classList.add('black');
+
+      console.log(el);
+      el > 0 ? divRaw.append(white) : divRaw.append(black);
+    }
+  }
+};
 
 // task 13 ------------------------------
 

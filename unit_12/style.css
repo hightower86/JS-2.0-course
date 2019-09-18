@@ -30,3 +30,22 @@ pre {
 .inp52 {
   width: 30px;
 }
+
+span {
+}
+
+.raw {
+  display: flex;
+}
+.white {
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+.black {
+  height: 15px;
+  width: 15px;
+  background-color: #000;
+  border: 1px solid #000;
+}
