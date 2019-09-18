@@ -210,3 +210,67 @@ btn15.onclick = () => {
   }
   div15.textContent = newArr15;
 };
+
+// task 16 --------------------------
+let arr16_1 = [3, 5, 7];
+let arr16_2 = [2, 4, 6];
+
+const div16 = document.querySelector('.div16');
+const btn16 = document.querySelector('.btn16');
+
+btn16.onclick = () => {
+  div16.textContent = arr16_1.concat(arr16_2);
+};
+
+// task 17 ----------------------------------
+let arr17_1 = [33, 55, 77];
+let arr17_2 = [2, 4, 6];
+const div17 = document.querySelector('.div17');
+const btn17 = document.querySelector('.btn17');
+
+btn17.onclick = () => {
+  for (let i = 0; i < arr17_2.length; i++) {
+    const element = arr17_2[i];
+    arr17_1.push(element);
+  }
+  div17.textContent = arr17_1;
+};
+
+// task 18 -------------------------------
+const div18 = document.querySelector('.div18');
+const inp18 = document.querySelector('.inp18');
+const btn18 = document.querySelector('.btn18');
+let arr18 = [3, 5, 7, 11, 12, 13, 14];
+
+btn18.onclick = () => {
+  div18.textContent = arr18.includes(+inp18.value);
+};
+
+// task 19 ----------------------------------
+const div19 = document.querySelector('.div19');
+const inp19 = document.querySelector('.inp19');
+const btn19 = document.querySelector('.btn19');
+
+let arr19 = [3, 5, 7, 11, 12, 13, 14];
+
+const funcIncludes = (arr, val) => {
+  console.log(arr, val);
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+    if (element === val) {
+      return true;
+    }
+  }
+  return false;
+};
+
+btn19.onclick = () => (div19.textContent = funcIncludes(arr19, +inp19.value));
+
+// task 20 ----------------------------------
+let arr20 = [1, 2, 3, 4, 5, 6, 7, 8];
+const div20 = document.querySelector('.div20');
+const btn20 = document.querySelector('.btn20');
+
+btn20.onclick = () => {
+  div20.textContent = arr20.join('::');
+};
