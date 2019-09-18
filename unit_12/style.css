@@ -1,0 +1,32 @@
+html,
+body {
+  font-family: serif;
+}
+body {
+  margin: 20px;
+}
+
+.result {
+  height: 30px;
+  width: 100%;
+  background-color: rgb(243, 230, 230);
+  margin-bottom: 5px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+button {
+  height: 24px;
+  background-color: rgb(237, 248, 185);
+}
+button:hover {
+  background-color: #999;
+}
+pre {
+  background-color: rgb(231, 248, 209);
+}
+
+.inp5,
+.inp52 {
+  width: 30px;
+}
