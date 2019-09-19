@@ -182,6 +182,21 @@ btn12.onclick = () => {
 };
 
 // task 13 ------------------------------
+const div13 = document.querySelector('.div13');
+const btn13 = document.querySelector('.btn13');
+
+btn13.onclick = () => {
+  arr13 = [];
+  for (let i = 0; i < 4; i++) {
+    let n = []; // nested array
+    for (let k = 3; k <= 5; k++) {
+      n.push(k);
+    }
+    arr13.push(n);
+  }
+  div13.innerHTML += arr13[0][1] + '<br>';
+  div13.innerHTML += arr13[3][2];
+};
 
 // task 14 ---------------------------
 
