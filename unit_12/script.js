@@ -199,8 +199,35 @@ btn13.onclick = () => {
 };
 
 // task 14 ---------------------------
+const div14 = document.querySelector('.div14');
+const btn14 = document.querySelector('.btn14');
+
+btn14.onclick = () => {
+  arr14 = [[2, 4, 5, 6], [34], 5, [0, 3, 4]];
+
+  div14.innerHTML += arr14[0][1] + '<br>';
+  div14.innerHTML += arr14[2];
+};
 
 // task 15 ------------------------------
+const div15 = document.querySelector('.div15');
+const btn15 = document.querySelector('.btn15');
+
+btn15.onclick = () => {
+  arr15 = [
+    [2, 4, 5, 6],
+    [34],
+    [1, 2, 3, 5],
+    [0, 3, 4],
+    [0, 3, 4],
+    [0, 3, 4],
+    ['[4, 5]']
+  ];
+
+  div15.innerHTML += arr15[0][1] + '<br>';
+  div15.innerHTML += arr15[2][3] + '<br>';
+  div15.innerHTML += arr15[6];
+};
 
 // task 17 ----------------------------------
 
