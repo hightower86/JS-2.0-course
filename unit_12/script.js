@@ -229,10 +229,91 @@ btn15.onclick = () => {
   div15.innerHTML += arr15[6];
 };
 
+// task 16 ----------------------------------
+const div16 = document.querySelector('.div16');
+const btn16 = document.querySelector('.btn16');
+
+btn16.onclick = () => {
+  arr16 = [
+    [2, 4, 5, 6],
+    [34],
+    [1, 2, 3, 5],
+    [0, 3, 4][(0, 3, 4)],
+    [0, 3, 4],
+    [0, 3, 4],
+    [[4, 6]]
+  ];
+
+  div16.innerHTML += arr16[0][1] + '<br>';
+  div16.innerHTML += arr16[2][3] + '<br>';
+  div16.innerHTML += arr16[6][0][1];
+};
+
 // task 17 ----------------------------------
+const div17 = document.querySelector('.div17');
+const btn17 = document.querySelector('.btn17');
+
+btn17.onclick = () => {
+  arr17 = [
+    [1, [9, 8, 7, 4, 5], 26],
+    [34],
+    [1, [1, 5], 2, 3, 5],
+    [0, 3, 4],
+    [0, 3, 4],
+    [0, 3, 4],
+    [[4, 6]]
+  ];
+
+  div17.innerHTML += arr17[0][1][3] + '<br>';
+  div17.innerHTML += arr17[2][1][1] + '<br>';
+  div17.innerHTML += arr17[6][0][1];
+};
 
 // task 18 -------------------------------
+const div18 = document.querySelector('.div18');
+const btn18 = document.querySelector('.btn18');
+
+btn18.onclick = () => {
+  arr18_1 = [1, 2, 3];
+  arr18 = [
+    [1, [9, 8, 7, 4, 5], 26],
+    [34],
+    [1, [1, 5, 1, 5], 2, 3, 5],
+    arr18_1,
+    [1, 9],
+    arr18_1,
+    [[4, 6]]
+  ];
+
+  div18.innerHTML += arr18[0][1][3] + '<br>';
+  div18.innerHTML += arr18[2][1][3] + '<br>';
+  div18.innerHTML += arr18[6][0][1] + '<br>';
+  div18.innerHTML += arr18[3] == arr18[5];
+};
 
 // task 19 ----------------------------------
+const div19 = document.querySelector('.div19');
+const btn19 = document.querySelector('.btn19');
 
+btn19.onclick = () => {
+  let sum = 0;
+  for (let i = 0; i < a.length; i++) {
+    na = a[i]; // nested array
+    for (let k = 0; k < na.length; k++) {
+      sum += typeof na[k] === 'number' ? na[k] : 0;
+    }
+  }
+  div19.innerHTML = sum;
+};
 // task 20 ----------------------------------
+const div20 = document.querySelector('.div20');
+
+const arr20 = [['', '', ''], ['', '', ''], ['', '', '']];
+const comb1 = [arr20[0][0], arr20[0][1], arr20[0][2]];
+const comb2 = [arr20[1][0], arr20[1][1], arr20[1][2]];
+const comb3 = [arr20[2][0], arr20[2][1], arr20[2][2]];
+const comb4 = [arr20[0][0], arr20[1][0], arr20[2][0]];
+const comb5 = [arr20[0][1], arr20[1][1], arr20[2][1]];
+const comb6 = [arr20[0][2], arr20[1][2], arr20[2][2]];
+const comb7 = [arr20[0][0], arr20[1][1], arr20[2][2]];
+const comb8 = [arr20[0][2], arr20[1][1], arr20[2][0]];
