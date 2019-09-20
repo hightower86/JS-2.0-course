@@ -13,9 +13,46 @@ btn1.onclick = () => {
   }
   div1.innerHTML = out1;
 };
+
 // task 2 ---------------------------
 
+const a2 = {
+  3: 'hello',
+  one: 'hi',
+  testt: 'vodoley',
+  ivan: 'ivanov'
+};
+const btn2 = document.querySelector('.btn2');
+const div2 = document.querySelector('.div2');
+
+btn2.onclick = () => {
+  let out2 = '';
+  for (const key in a2) {
+    if (a2[key].length > 4) {
+      out2 += key + ' -- ' + a2[key] + '<br>';
+    }
+  }
+  div2.innerHTML = out2;
+};
 // task 3 ----------------------------
+const a3 = {
+  3: 'hello',
+  one: 'hi',
+  testt: 'vodoley',
+  ivan: 'ivanov'
+};
+const div3 = document.querySelector('.div3');
+const btn3 = document.querySelector('.btn3');
+
+btn3.onclick = () => {
+  out3 = '';
+  for (const key in a3) {
+    if (key.length > 4) {
+      out3 += key + ' -- ' + a3[key] + '<br>';
+    }
+  }
+  div3.innerHTML = out3;
+};
 
 // task 4 ------------------------------
 
