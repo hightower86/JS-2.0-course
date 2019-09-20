@@ -115,20 +115,76 @@ const inp72 = document.querySelector('.inp72');
 const a7 = {};
 
 btn7.onclick = () => {
+  div7.innerHTML = '';
   const i7 = inp7.value.trim();
   const i72 = inp72.value.trim();
   if (i7.length === 0 || i72.length === 0) {
     alert('both of inputs must be filled');
   }
   a7[i7] = i72;
-  div7.innerHTML += `${i7} -- ${a7[i7]}<br>`;
-  console.log(a7);
+  for (const key in a7) {
+    div7.innerHTML += `${key} -- ${a7[key]}<br>`;
+  }
 };
 // task 8 --------------------------------
+const div8 = document.querySelector('.div8');
+const btn8 = document.querySelector('.btn8');
+const inp8 = document.querySelector('.inp8');
+const inp82 = document.querySelector('.inp82');
+const inp8del = document.querySelector('.inp8del');
+const btn8del = document.querySelector('.btn8del');
+const a8 = {};
+
+btn8.onclick = () => {
+  div8.innerHTML = '';
+  const i8 = inp8.value.trim();
+  const i82 = inp82.value.trim();
+  if (i8.length === 0 || i82.length === 0) {
+    alert('both of inputs must be filled');
+  }
+  a8[i8] = i82;
+  for (const key in a8) {
+    div8.innerHTML += `${key} -- ${a8[key]}<br>`;
+  }
+
+  console.log(a8);
+};
+
+btn8del.onclick = () => {
+  div8.innerHTML = '';
+  const key = inp8del.value.trim();
+  delete a8[key];
+  for (const key8 in a8) {
+    div8.innerHTML += `${key8} -- ${a8[key8]}<br>`;
+  }
+};
 
 // task 9 --------------------------
+const inp9 = document.querySelector('.inp9');
+const btn9 = document.querySelector('.btn9');
+
+btn9.onclick = () => {
+  div8.innerHTML = '';
+  const i9 = inp9.value.trim();
+  for (const key in a8) {
+    if (a8[key] === i9) {
+      delete a8[key];
+    }
+  }
+  for (const key8 in a8) {
+    div8.innerHTML += `${key8} -- ${a8[key8]}<br>`;
+  }
+};
 
 // task 10 ----------------------------
+const inp10 = document.querySelector('.inp10');
+const btn10 = document.querySelector('.btn10');
+
+btn10.onclick = () => {
+  inp8.innerHTML = '';
+  i10 = inp10.value.trim();
+  a8[i10] === undefined ? console.log(false) : console.log(true);
+};
 
 // task 11 ------------------------------
 
