@@ -178,11 +178,7 @@
         <option value="green">green</option>
       </select>
       <button class="btn12">brunch</button>
-      <!-- <p>
-        Task 13. Добавьте к предыдущей задаче кнопку button.u13-reverse которая
-        при нажатии выводит станции ветки в обратном порядке.
-      </p>
-      <div class="div13 result"></div> -->
+
       <button class="btn13">13.reverse</button>
       <p>
         Task 14. Добавьте к предыдущей задаче select.u14-find-station и кнопку.
@@ -191,9 +187,40 @@
       </p>
       <select name="station" id="selStation"></select>
       <button class="btn14">14. find branch</button>
+      <p>
+        Task 15. Добавьте к предыдущему заданию 2 select где пользователь может
+        выбрать 2 станции, и если они на одной ветке - то по нажатию на кнопку
+        будет показано сколько станций между ними (сами станции не включаем.
+        Если это соседние станции - то 0).
+      </p>
+
+      <select name="station1" id="sel15"
+        >station 1</select
+      >
+      <select name="station2" id="sel152"
+        >station 2</select
+      >
+      <button class="btn15">distance</button>
     </div>
     <hr />
-
+    <div class="task">
+      <p>
+        Task 16. Добавьте 3 radiobutton.u16-radio которые содержат value = red,
+        green, blue - в соотвтествии с цветом веток метро. Добавьте пустой
+        select.u16-select. При выборе radio - программа должна в select
+        добавлять option с названиями станций метро. Т.е. выбрали
+        radio(value="green") то внутрь select должны быть записаны option со
+        станциями зеленой ветки. Выбрали red - select должен быть очищен и
+        добавлены option со станциями красной ветки.
+      </p>
+      <select class="sel16"></select>
+      <input type="radio" name="rad16" id="red16" value="red" />
+      <label for="r161">red</label>
+      <input type="radio" name="rad16" id="blue16" value="blue" />
+      <label for="r162">blue</label>
+      <input type="radio" name="rad16" id="green16" value="green" />
+      <label for="r163">green</label>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

@@ -287,25 +287,82 @@ btn13.onclick = () => {
 const selStation = document.getElementById('selStation');
 const btn14 = document.querySelector('.btn14');
 const allStations = [...a11['red'], ...a11['blue'], ...a11['green']];
-for (let i = 0; i < allStations.length; i++) {
-  const station = allStations[i];
-  const opt = document.createElement('option');
-  opt.value = station;
-  opt.textContent = station;
-  selStation.appendChild(opt);
-}
 
-btn14.onclick = () => {
-  const station = selStation.value;
+const appendOptions = parent => {
+  //options = [];
+  for (let i = 0; i < allStations.length; i++) {
+    const station = allStations[i];
+    const opt = document.createElement('option');
+    opt.value = station;
+    opt.textContent = station;
+    //options.push(opt);
+    parent.appendChild(opt);
+  }
+  return parent;
+};
+//console.log(createOptions());
+
+appendOptions(selStation);
+
+const whosStation = station => {
   for (const key in a11) {
     const branchStations = a11[key];
     if (branchStations.includes(station)) {
-      console.log(key);
+      return key;
     }
   }
+  return false;
+};
+
+btn14.onclick = () => {
+  const station = selStation.value;
+  const branch = whosStation(station);
+  console.log(branch);
+  btn14.style.color = branch;
 };
 
 // task 15 ------------------------------
+const sel15 = document.querySelector('#sel15');
+const sel152 = document.querySelector('#sel152');
+const btn15 = document.querySelector('.btn15');
+
+appendOptions(sel15); //заполняем список селекта
+appendOptions(sel152);
+
+const isOneBranch = (station1, station2) => {
+  return whosStation(station1) === whosStation(station2);
+};
+
+btn15.onclick = () => {
+  if (isOneBranch(sel15.value, sel152.value)) {
+    const idx1 = sel15.options.selectedIndex;
+    const idx2 = sel152.options.selectedIndex;
+    console.log(idx2 !== idx1 ? Math.abs(idx2 - idx1) - 1 : 0);
+  }
+};
+
+// task 16 ----------------------------------
+const inp161 = document.querySelector('#r161');
+const inp162 = document.querySelector('#r162');
+const inp163 = document.querySelector('#r163');
+const sel16 = document.querySelector('.sel16');
+
+const fillSelect = branch => {
+  sel16.options.length = 0;
+  const stations = a11[branch];
+  for (let i = 0; i < stations.length; i++) {
+    const station = stations[i];
+    const opt = document.createElement('option');
+    opt.value = station;
+    opt.textContent = station;
+    sel16.appendChild(opt);
+  }
+};
+
+const radios = document.getElementsByName('rad16');
+for (let i = 0; i < radios.length; i++) {
+  radios[i].onclick = () => fillSelect(radios[i].value);
+}
 
 // task 17 ----------------------------------
 

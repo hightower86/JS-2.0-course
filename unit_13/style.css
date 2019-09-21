@@ -30,6 +30,10 @@ pre {
 input {
   width: 40px;
 }
-#selStation {
+select {
   width: 100px;
+}
+
+input[type='radio'] {
+  width: auto;
 }
