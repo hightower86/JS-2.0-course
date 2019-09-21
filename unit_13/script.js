@@ -262,7 +262,6 @@ btn11.onclick = () => {
     const p = document.createElement('p');
     p.textContent = `${key} -- ${a11[key].join(', ')}`;
     p.style.color = key;
-    console.log(p);
     div11.append(p);
   }
 };
@@ -274,13 +273,37 @@ const sel12 = document.getElementById('sel12');
 
 btn12.onclick = () => {
   const selIdx = sel12.options.selectedIndex;
-  console.log(sel12);
   div12.innerHTML = a11[sel12.options[selIdx].value];
 };
 
 // task 13 ------------------------------
+const btn13 = document.querySelector('.btn13');
 
+btn13.onclick = () => {
+  const selIdx = sel12.options.selectedIndex;
+  div12.innerHTML = a11[sel12.options[selIdx].value].reverse();
+};
 // task 14 ---------------------------
+const selStation = document.getElementById('selStation');
+const btn14 = document.querySelector('.btn14');
+const allStations = [...a11['red'], ...a11['blue'], ...a11['green']];
+for (let i = 0; i < allStations.length; i++) {
+  const station = allStations[i];
+  const opt = document.createElement('option');
+  opt.value = station;
+  opt.textContent = station;
+  selStation.appendChild(opt);
+}
+
+btn14.onclick = () => {
+  const station = selStation.value;
+  for (const key in a11) {
+    const branchStations = a11[key];
+    if (branchStations.includes(station)) {
+      console.log(key);
+    }
+  }
+};
 
 // task 15 ------------------------------
 

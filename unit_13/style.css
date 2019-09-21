@@ -30,3 +30,6 @@ pre {
 input {
   width: 40px;
 }
+#selStation {
+  width: 100px;
+}
