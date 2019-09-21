@@ -265,10 +265,18 @@ btn11.onclick = () => {
     console.log(p);
     div11.append(p);
   }
-  // div11.innerHTML = out11;
 };
 
 // task 12 ------------------------------
+const div12 = document.querySelector('.div12');
+const btn12 = document.querySelector('.btn12');
+const sel12 = document.getElementById('sel12');
+
+btn12.onclick = () => {
+  const selIdx = sel12.options.selectedIndex;
+  console.log(sel12);
+  div12.innerHTML = a11[sel12.options[selIdx].value];
+};
 
 // task 13 ------------------------------
 
