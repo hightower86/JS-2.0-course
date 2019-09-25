@@ -58,12 +58,16 @@ btn7.onclick = () => {
 // task 8 --------------------------------
 const btn8 = document.querySelector('.btn8');
 const s8 = new Set([1, '2', 3, '4', 5, 6, '7']);
-console.log(s8);
 const even8 = set => {
   let result = '';
-
-  console.log(result);
+  let count = 0;
+  for (let e of set) {
+    if (count % 2 === 0) console.log(e);
+    count++;
+  }
 };
+
+btn8.onclick = () => even8(s8);
 
 // task 9 --------------------------
 
