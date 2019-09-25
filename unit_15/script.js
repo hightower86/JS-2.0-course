@@ -102,10 +102,32 @@ btn10.onclick = () => {
 };
 
 // task 11 ------------------------------
+const div11 = document.querySelector('.div11');
+const inp11 = document.querySelector('.inp11');
+const btn11 = document.querySelector('.btn11');
 const arrSet = ['1', '2', '3', '4', '5', '6'];
 
-// task 12 ------------------------------
+const set11 = arr11 => {
+  const val = inp11.value;
+  if (!arr11.includes(val)) {
+    arr11.push(val);
+  }
+  div11.innerHTML = arr11;
+};
 
+btn11.onclick = () => set11(arrSet);
+
+// task 12 ------------------------------
+const set12 = new Set([1, 2, 3, 4, 5, 6, 7, 8]);
+const btn12 = document.querySelector('.btn12');
+
+btn12.onclick = () => {
+  const arr12 = [];
+  for (let el of set12) {
+    arr12.push(el);
+  }
+  console.log(arr12);
+};
 // task 13 ------------------------------
 
 // task 14 ---------------------------
