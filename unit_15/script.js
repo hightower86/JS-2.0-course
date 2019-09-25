@@ -70,10 +70,39 @@ const even8 = set => {
 btn8.onclick = () => even8(s8);
 
 // task 9 --------------------------
+const btn9 = document.querySelector('.btn9');
+const s9 = new Set([1, '2', 3, '4', 5, 6, '7']);
+
+const reverse = set => {
+  const arr91 = [...set];
+  const arr9 = arr91.reverse();
+  for (let i = 0; i < arr9.length; i++) {
+    console.log(arr9[i]);
+  }
+};
+
+btn9.onclick = () => reverse(s9);
 
 // task 10 ----------------------------
+const arr10 = [1, 2, 3, 3, 3, 4, 5, 6, 6, 6, 7, 8, 9, 9, 88, 8];
+const btn10 = document.querySelector('.btn10');
+const s10 = new Set(arr10);
+let r10 = {};
+
+btn10.onclick = () => {
+  for (let e of s10) r10[e] = 0;
+  //  заполняем ассоц. массив всеми оригинальными значениями
+  // по одной штуке
+  for (let i = 0; i < arr10.length; i++) {
+    const el = arr10[i];
+    r10[el] = r10[el] + 1;
+  }
+  console.log(r10); // в ассоциативном массиве возвращаем ключ -
+  // элемент исходного массива, значение - количество элементов в нем
+};
 
 // task 11 ------------------------------
+const arrSet = ['1', '2', '3', '4', '5', '6'];
 
 // task 12 ------------------------------
 
