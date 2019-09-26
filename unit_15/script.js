@@ -168,7 +168,51 @@ btn17.onclick = () => {
 };
 
 // task 18 -------------------------------
+const btn18 = document.querySelector('.btn18');
+
+const countLetters = str => {
+  const set18 = new Set(str);
+  const arr = str.split(''); //делаем массив из строки
+
+  const res = {}; // массив аккумулятор результата
+
+  for (let el of set18) res[el] = 0; // задаем нулевые значения в результирующий массив-аккумулятор
+  for (let i = 0; i < arr.length; i++) {
+    res[arr[i]]++;
+  }
+
+  console.log(res);
+};
+
+btn18.onclick = () => countLetters('hello world hello world');
 
 // task 19 ----------------------------------
+const div19 = document.querySelector('.div19');
+const btn19 = document.querySelector('.btn19');
+const set19 = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+
+btn19.onclick = () => {
+  let out = '';
+  let counter = 1;
+  for (let el of set19) {
+    if (counter % 2 === 0) out += `${el}, `;
+    counter++;
+  }
+
+  div19.innerHTML = out;
+};
 
 // task 20 ----------------------------------
+const btn20 = document.querySelector('.btn20');
+const arr20 = [1, 2, 3, 4, 5, 6, 7, 8];
+
+btn20.onclick = () => {
+  const set1 = new Set();
+  const set2 = new Set();
+  for (let i = 0; i < arr20.length; i++) {
+    const el = arr20[i];
+    el % 2 === 0 ? set1.add(el) : set2.add(el);
+  }
+
+  console.log(set1, set2);
+};

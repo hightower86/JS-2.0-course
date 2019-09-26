@@ -1,0 +1,13 @@
+* {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.card {
+  height: 300px;
+  width: 100%;
+  background-color: rgba(180, 176, 176, 0.4);
+}
+
+.select {
+  width: 80%;
+}

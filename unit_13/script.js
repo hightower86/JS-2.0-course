@@ -464,5 +464,43 @@ btn18.onclick = () => {
   div17.innerHTML = out;
 };
 // task 19 ----------------------------------
+const div19 = document.querySelector('.div19');
+const btn19 = document.querySelector('.btn19');
+a19 = {
+  russia: { capital: 'Moscow', population: 145000000, area: 17125200 },
+  china: { capital: 'Beijing', population: 1404000000, area: 9600000 },
+  india: { capital: 'Delhi', population: 1324171354, area: 3287263 }
+};
+
+btn19.onclick = () => {
+  out = '';
+  for (const country in a19) {
+    out += country + ':<br>';
+    for (const key in a19[country]) {
+      out += `${key}: ${a19[country][key]} <br>`;
+    }
+  }
+  div19.innerHTML = out;
+};
 
 // task 20 ----------------------------------
+const div20 = document.querySelector('.div20');
+const sel20 = document.querySelector('.sel20');
+
+const filterCountry = country => {
+  div20.innerHTML = '';
+  out = '';
+  const info = a19[country];
+  for (const key in info) {
+    out += `${key}: ${info[key]} <br>`;
+  }
+  div20.innerHTML += out;
+};
+
+for (const key in a19) {
+  const opt = document.createElement('option');
+  opt.value = key;
+  opt.textContent = key;
+  opt.onclick = () => filterCountry(key);
+  sel20.appendChild(opt);
+}
