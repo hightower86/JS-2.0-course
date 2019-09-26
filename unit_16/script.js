@@ -86,11 +86,48 @@ const func7 = () => {
 };
 
 btn7.onclick = func7;
+
 // task 8 --------------------------------
+const btn8 = document.querySelector('.btn8');
+
+const a8 = [[1, 2, 3], [3, 4, 9], [5, 6]];
+
+const func8 = () => {
+  let idxMax = 0;
+  for (let i = 0; i < a8.length; i++) {
+    for (let k = 0; k < a8[i].length; k++) {
+      idxMax = idxMax > k ? idxMax : k;
+    }
+  }
+  console.log(idxMax);
+};
+
+btn8.onclick = func8;
 
 // task 9 --------------------------
+const btn9 = document.querySelector('.btn9');
+const a9 = [4, 6, 9, 'hello'];
+
+const func9 = () => {
+  a9new = {};
+  for (let i = 0; i < a9.length; i++) {
+    a9new[a9[i]] = a9[i];
+  }
+  console.log(a9new);
+};
+
+btn9.onclick = func9;
 
 // task 10 ----------------------------
+const a10 = [5, 7, 9, 11, 13, 15];
+const btn10 = document.querySelector('.btn10');
+const div10 = document.querySelector('.div10');
+
+btn10.onclick = () => {
+  for (const idx in a10) {
+    div10.textContent += a10[idx] + ', ';
+  }
+};
 
 // task 11 ------------------------------
 
