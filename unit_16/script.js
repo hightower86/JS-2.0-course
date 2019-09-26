@@ -203,9 +203,47 @@ btn15.onclick = func15;
 
 // task 16 ----------------------------------
 
+const btn16 = document.querySelector('.btn16');
+
+const a16 = [4, 6, 9, 'hello'];
+
+btn16.onclick = () => {
+  const a9_1 = {};
+  for (let idx in a16) {
+    a9_1[a16[idx]] = a16[idx];
+  }
+
+  console.log(a9_1);
+};
+
 // task 17 ----------------------------------
+const a17 = [5, 7, 9, 11, 13, 15];
+const div17 = document.querySelector('.div17');
+const btn17 = document.querySelector('.btn17');
+
+btn17.onclick = () => {
+  let out = '';
+  for (let item of a17) {
+    out += `${item}, `;
+  }
+  div17.textContent = out;
+};
 
 // task 18 -------------------------------
+const a18 = [5, 7, 9, 11, 13, 15];
+const div18 = document.querySelector('.div18');
+const btn18 = document.querySelector('.btn18');
+const sel18 = document.querySelector('.sel18');
+
+btn18.onclick = () => {
+  let idx = 0;
+  let out = '';
+  for (let item of a18) {
+    out += `${idx}${sel18.value}${item}<br>`;
+    idx++;
+  }
+  div18.innerHTML = out;
+};
 
 // task 19 ----------------------------------
 
