@@ -157,11 +157,51 @@ const func12 = () => {
 };
 
 btn12.onclick = func12;
+
 // task 13 ------------------------------
+const divs13 = document.querySelectorAll('.div13');
+const btn13 = document.querySelector('.btn13');
+
+const func13 = () => {
+  for (let idx in divs13) {
+    divs13[idx].textContent += 'task-13';
+  }
+};
+
+btn13.onclick = func13;
 
 // task 14 ---------------------------
+const btn14 = document.querySelector('.btn14');
+const a14 = [[1, 2], [3, 4], [5, 6]];
+
+const func14 = () => {
+  const a14new = [];
+  for (let idx in a14) {
+    for (let ix in a14[idx]) {
+      a14new.push(a14[idx][ix]);
+    }
+  }
+  console.log(a14new);
+};
+
+btn14.onclick = func14;
 
 // task 15 ------------------------------
+const btn15 = document.querySelector('.btn15');
+const a15 = [[1, 2, 3], [3, 4, 9], [5, 6]];
+const func15 = () => {
+  let maxIdx = 0;
+  for (let idx in a15) {
+    for (let ix in a15[idx]) {
+      maxIdx = ix > maxIdx ? ix : maxIdx;
+    }
+  }
+  console.log(maxIdx);
+};
+
+btn15.onclick = func15;
+
+// task 16 ----------------------------------
 
 // task 17 ----------------------------------
 
