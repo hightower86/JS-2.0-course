@@ -130,9 +130,33 @@ btn10.onclick = () => {
 };
 
 // task 11 ------------------------------
+const div11 = document.querySelector('.div11');
+const btn11 = document.querySelector('.btn11');
+const sel11 = document.querySelector('.sel11');
+const a11 = [5, 7, 9, 11, 13, 15];
+
+btn11.onclick = () => {
+  let out = '';
+
+  for (const idx in a11) {
+    out += `${idx}${sel11.value}${a10[idx]}<br>`;
+  }
+
+  div11.innerHTML = out;
+};
 
 // task 12 ------------------------------
+const divs12 = document.getElementsByClassName('div12');
+const btn12 = document.querySelector('.btn12');
 
+const func12 = () => {
+  for (let idx in divs12) {
+    console.log(divs12[idx]);
+    divs12[idx].textContent += 'task-12';
+  }
+};
+
+btn12.onclick = func12;
 // task 13 ------------------------------
 
 // task 14 ---------------------------
