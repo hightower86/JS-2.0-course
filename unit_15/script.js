@@ -129,12 +129,43 @@ btn12.onclick = () => {
   console.log(arr12);
 };
 // task 13 ------------------------------
+const div13 = document.querySelector('.div13');
+const btn13 = document.querySelector('.btn13');
+const set13 = new Set([1, 2, 3, 4, 5, 6]);
+const showSet13 = (set, div, sep) => {
+  for (let el of set) div.innerHTML += `${el}${sep} `;
+};
 
-// task 14 ---------------------------
+btn13.onclick = () => showSet13(set13, div13, ';');
 
-// task 15 ------------------------------
+// task 15 ---------------------------
+const btn15 = document.querySelector('.btn15');
+const arr15 = [[1, 0], [1, 0], [2, 0]];
+const set15 = new Set();
+
+for (let i = 0; i < arr15.length; i++) {
+  set15.add(arr15[i]);
+}
+btn15.onclick = () => console.log(set15.size);
+
+// task 16 ------------------------------
+const btn16 = document.querySelector('.btn16');
+const arr16 = [{ Ivan: 1 }, { Ivan: 1 }, { Ivan: 2 }, { Serg: 0 }];
+const set16 = new Set();
+
+for (let i = 0; i < arr16.length; i++) {
+  set16.add(arr16[i]);
+}
+btn16.onclick = () => console.log(set16.size);
 
 // task 17 ----------------------------------
+const btn17 = document.querySelector('.btn17');
+
+btn17.onclick = () => {
+  const u17 = 'Primer';
+  const set17 = new Set(u17);
+  console.log(set17); //0: "P" 1: "r" 2: "i" 3: "m" 4: "e"
+};
 
 // task 18 -------------------------------
 
