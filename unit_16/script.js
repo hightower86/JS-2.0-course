@@ -27,6 +27,16 @@ btn2.onclick = () => {
   div2.innerHTML = out;
 };
 // task 3 ----------------------------
+const btn3 = document.querySelector('.btn3');
+const divS3 = document.getElementsByClassName('div3');
+
+btn3.onclick = () => {
+  console.log(divS3);
+  for (let div of divS3) {
+    console.log(div);
+    div.innerHTML += 'task-3';
+  }
+};
 
 // task 4 ------------------------------
 
