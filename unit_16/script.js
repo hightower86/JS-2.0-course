@@ -246,5 +246,30 @@ btn18.onclick = () => {
 };
 
 // task 19 ----------------------------------
+const divs19 = document.getElementsByClassName('div19');
+const btn19 = document.querySelector('.btn19');
+
+const func19 = () => {
+  for (let div of divs19) {
+    div.textContent += 'task-19';
+  }
+};
+
+btn19.onclick = func19;
 
 // task 20 ----------------------------------
+const divs20 = document.querySelectorAll('.div20');
+const btn20 = document.querySelector('.btn20');
+
+const func20 = () => {
+  for (let div of divs20) {
+    div.textContent += 'task 20';
+  }
+};
+
+btn20.onclick = func20;
+
+// task 21 ----------------------------------
+
+// task 22 ----------------------------------
+// task 23 ----------------------------------
