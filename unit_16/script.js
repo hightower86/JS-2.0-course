@@ -270,6 +270,52 @@ const func20 = () => {
 btn20.onclick = func20;
 
 // task 21 ----------------------------------
+let a21 = [[1, 2], [3, 4], [5, 6]];
+const btn21 = document.querySelector('.btn21');
+
+const func21 = () => {
+  let newArr = [];
+  for (let arr of a21) {
+    for (let item of arr) {
+      newArr.push(item);
+    }
+  }
+  a21 = newArr;
+  console.log(a21);
+};
+
+btn21.onclick = func21;
 
 // task 22 ----------------------------------
+const btn22 = document.querySelector('.btn22');
+const a22 = [[1, 2, 3], [3, 4, 9, 10], [5, 6]];
+
+const func22 = () => {
+  let maxIdx = 0;
+  for (let arr of a22) {
+    let idx = 0;
+    for (let item of arr) {
+      maxIdx = maxIdx > idx ? maxIdx : idx;
+      idx++;
+    }
+  }
+  console.log(maxIdx);
+};
+
+btn22.onclick = func22;
+
 // task 23 ----------------------------------
+const btn23 = document.querySelector('.btn23');
+const a23 = [4, 6, 9, 'hello'];
+
+const func23 = () => {
+  let idx = 0;
+  const a23new = {};
+  for (let item of a23) {
+    a23new[item] = item;
+    idx++;
+  }
+  console.log(a23new);
+};
+
+btn23.onclick = func23;
