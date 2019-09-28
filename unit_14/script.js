@@ -4,3 +4,9 @@ fetch(
 )
   .then(resp => resp.json())
   .then(data => console.log(data));
+
+const cardSubt = document.querySelector('.card-subt');
+document.querySelector('.select').onchange = function() {
+  console.log(this.value);
+  cardSubt.textContent = this.name;
+};
