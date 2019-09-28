@@ -67,24 +67,32 @@ document.querySelector('.div-6').ondblclick = t6;
 // Task 7 ============================================
 /*  Дан блок .div-7. При клике правой кнопкой мыши на блоке добавляйте ему класс .active. При повторном клике - удаляйте. */
 
-function t7() {}
+function t7() {
+  this.classList.toggle('active');
+  return false;
+}
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-7').oncontextmenu = t7;
 // Task 8 ============================================
 /*  Дано checkbox .ch-8. Повесьте на него событие onchange при котором на документе отключается клик правой кнопкой мыши если checkbox выбран и отключает если не выбран. */
 
-function t8() {}
+function t8() {
+  document.oncontextmenu = () => this.checked;
+}
 
 // ваше событие здесь!!!
-
+document.querySelector('.ch-8').onchange = t8;
 // Task 9 ============================================
 /*  Дан блок .div-9. Внутри блока - изображение 1.png. При клике правой кнопкой мыши  - меняйте изображение на 2.png. Надеюсь вы догадаетесь изменить только src изображения? */
 
-function t9() {}
+function t9() {
+  this.children[0].src = 'img/2.png';
+  return false;
+}
 
 // ваше событие здесь!!!
-
+document.querySelector('.div-9').oncontextmenu = t9;
 // Task 10 ============================================
 /*  Дан блок .div-10. Внутри блока - изображение 1.png. При наведении мыши (mouseenter)  - меняйте изображение на 2.png. */
 
