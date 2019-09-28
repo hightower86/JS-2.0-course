@@ -8,5 +8,5 @@ fetch(
 const cardSubt = document.querySelector('.card-subt');
 document.querySelector('.select').onchange = function() {
   console.log(this.value);
-  cardSubt.textContent = this.name;
+  cardSubt.textContent = this.value;
 };
