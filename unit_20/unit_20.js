@@ -71,18 +71,39 @@ i6.oninput = t6;
 /*  Дан input .i-7. Напишите функцию t7, которая выводит в .out-7 случаный символ из массива a7 при каждом вводе символа. */
 
 function t7() {
-  const a7 = [];
+  const a7 = ['a', 'e', 4, 'r', 6, 'v', 9, '3'];
+  document.querySelector('.out-7').textContent +=
+    a7[Math.floor(Math.random() * a7.length)];
 }
 
 // ваше событие здесь!!!
+document.querySelector('.i-7').onkeypress = t7;
 
 // Task 8 ============================================
 /*  Дан input .i-8. Напишите функцию t8, которая выводит в .out-8 вводимый в input текст, но заменяет i на 1, o на 0, l на 7. */
 
-function t8() {}
+function t8(e) {
+  let tc = '';
+  switch (e.key) {
+    case 'i':
+      tc += 1;
+      break;
+    case 'o':
+      tc += 0;
+      break;
+    case 'l':
+      tc += 7;
+      break;
+
+    default:
+      tc += e.key;
+      break;
+  }
+  document.querySelector('.out-8').textContent += tc;
+}
 
 // ваше событие здесь!!!
-
+document.querySelector('.i-8').onkeypress = t8;
 // Task 9 ============================================
 /* Дан input .i-9. Напишите функцию t8, выводит в .out-9 количество нажатых клавиш стрелка вниз. */
 
