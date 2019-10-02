@@ -1,24 +1,60 @@
-.container  {
-    width: 100%;
+.container {
+  width: 100%;
 }
 
 section {
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px dashed #444;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #444;
 }
 
 .block {
-    width: 75px;
-    height: 75px;
-    margin: 25px;
-    border: 2px solid #333;
+  width: 75px;
+  height: 75px;
+  margin: 25px;
+  border: 2px solid #333;
 }
 
 .active {
-    background: orange;
+  background: orange;
 }
 
 .hide {
-    display: none;
+  display: none;
+}
+
+.keyb {
+  width: 520px;
+  background-color: rgb(208, 230, 233);
+  border: 1px solid #000;
+  margin-top: 10px;
+  border-radius: 3px;
+}
+.key {
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.key:hover {
+  background-color: rgb(236, 240, 181);
+}
+.key1 {
+  padding: 5px 13px;
+}
+.key2 {
+  padding: 5px 18px;
+}
+.key3 {
+  padding: 5px 25px;
+}
+.key4 {
+  padding: 5px 100px;
+}
+.rowk {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+.last-section {
+  height: 300px;
 }
