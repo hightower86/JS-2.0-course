@@ -24,12 +24,18 @@ document.querySelector('.i-2').onkeypress = t2;
 // Task 3 ============================================
 /*  Дан input .i-3. Напишите функцию t3, которая выводит на страницу true если введен символ и false если цифра. Для определения - используйте код клавиши. */
 
-let w3 = 75;
-
-function t3() {}
+function t3(e) {
+  const out3 = document.querySelector('.out-3');
+  if (e.code.includes('Digit')) {
+    out3.textContent = false;
+  } else if (e.code.includes('Key')) {
+    out3.textContent = true;
+  }
+  //const out3 = document.querySelector('.out-3');
+}
 
 // ваше событие здесь!!!
-
+document.querySelector('.i-3').onkeypress = t3;
 // Task 4 ============================================
 /*  Дан input .i-4. Напишите функцию t4, которая выводит в .out-4 только символы в нижнем регистре. Т.е. ввели ab4Bci в out получаем ab4bci. */
 
