@@ -104,20 +104,37 @@ function t8(e) {
 
 // ваше событие здесь!!!
 document.querySelector('.i-8').onkeypress = t8;
+
 // Task 9 ============================================
 /* Дан input .i-9. Напишите функцию t8, выводит в .out-9 количество нажатых клавиш стрелка вниз. */
-
-function t9() {}
+let counter = 0;
+function t9(e) {
+  console.log(e);
+  counter += e.code === 40 || e.which === 40 ? 1 : 0;
+  document.querySelector('.out-9').textContent = counter;
+}
 
 // ваше событие здесь!!!
+document.querySelector('.i-9').onkeydown = t9;
 
 // Task 10 ============================================
 /*  Дан input .i-10 и изображение 1.png. Добавьте событие на input, при нажатии клавиш стрелка вправо и стрелка влево увеличивать ширину изображения. Клавиши стрелка вверх и вниз - увеличивать высоту изображения. Одно нажатие клавиши - 1px. */
+const img = document.querySelector('img');
+let w10 = img.clientWidth;
+let h10 = img.clientHeight;
 
-function t10() {}
+function t10(e) {
+  if (e.key == 'ArrowDown' || e.key == 'ArrowUp') {
+    img.style.height = `${h10++}px`;
+  }
+  if (e.key == 'ArrowLeft' || e.key == 'ArrowRight') {
+    img.style.width = `${w10++}px`;
+  }
+  console.log(w10, h10);
+}
 
 // ваше событие здесь!!!
-
+document.querySelector('.i-10').onkeydown = t10;
 // Task 11 ============================================
 /*  Проект. Дан input .i-11. Используя знания html и css нарисуйте клавиатуру (можно схематически). Изображение должно содержать числа, символьные клавиши, пробел, enter, caps lock, shift, tab, alt. При вводе текста в input в момент нажатия клавиши - затемняйте ее, в момент отпускания - возвращайте к первоначальному состоянию. Аналогично при нажатии enter, space, alt, shift, ctrl. Затемнение реализуйте через добавление класса CSS. Для удобства рекомендую каждой клавише добавить атрибут data с символом. Если нажата клавиша caps lock - то присвоить ей затемнение, которое работает до последующего отжатия клавиши. */
 
