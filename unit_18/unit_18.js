@@ -30,7 +30,7 @@ document.querySelector('.b-1').onclick = t1;
 function t2() {
   const a1 = [2, 3, 4, 5, 10, 11, 12];
   a1.forEach(el => {
-    a2_res.push(el * 2);
+    a2_res.push(el / 2);
   });
   document.querySelector('.out-2').innerHTML = a2_res;
 }
@@ -134,7 +134,7 @@ console.log();
 
 function t10() {
   const arr10 = Object.entries(a10);
-  let result = '';
+  let result = '?';
   arr10.forEach(arr => {
     result += arr.join('=') + '&';
   });
