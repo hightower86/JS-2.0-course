@@ -137,7 +137,25 @@ function t10(e) {
 document.querySelector('.i-10').onkeydown = t10;
 // Task 11 ============================================
 /*  Проект. Дан input .i-11. Используя знания html и css нарисуйте клавиатуру (можно схематически). Изображение должно содержать числа, символьные клавиши, пробел, enter, caps lock, shift, tab, alt. При вводе текста в input в момент нажатия клавиши - затемняйте ее, в момент отпускания - возвращайте к первоначальному состоянию. Аналогично при нажатии enter, space, alt, shift, ctrl. Затемнение реализуйте через добавление класса CSS. Для удобства рекомендую каждой клавише добавить атрибут data с символом. Если нажата клавиша caps lock - то присвоить ей затемнение, которое работает до последующего отжатия клавиши. */
+const keys = document.querySelectorAll('.key');
 
-function t11() {}
-
+function t11(e) {
+  //   console.log(e.keyCode, e);
+  const keyCode = e.keyCode || e.which;
+  const key = document.querySelector(`.key[data="${keyCode}"`);
+  key.classList.toggle('pressed');
+  //console.log(e, key);
+}
+function t12(e) {
+  console.log(e, 'keyup');
+  const keyCode = e.keyCode || e.which;
+  const key = document.querySelector(`.key[data="${keyCode}"`);
+  key.classList.toggle('pressed');
+}
+function t13(e) {
+  console.log(e);
+}
 // ваше событие здесь!!!
+document.querySelector('.i-11').onkeydown = t11;
+document.querySelector('.i-11').onkeyup = t12;
+document.querySelector('.i-11').onkeypress = t13;
