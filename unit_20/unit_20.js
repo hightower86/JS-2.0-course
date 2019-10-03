@@ -3,7 +3,6 @@
 const i1 = document.querySelector('.i-1');
 function t1(e) {
   const symb = e.key;
-  console.log(symb);
   document.querySelector('.out-1').textContent = symb;
   return symb;
 }
@@ -109,7 +108,6 @@ document.querySelector('.i-8').onkeypress = t8;
 /* Дан input .i-9. Напишите функцию t8, выводит в .out-9 количество нажатых клавиш стрелка вниз. */
 let counter = 0;
 function t9(e) {
-  console.log(e);
   counter += e.code === 40 || e.which === 40 ? 1 : 0;
   document.querySelector('.out-9').textContent = counter;
 }
@@ -130,7 +128,6 @@ function t10(e) {
   if (e.key == 'ArrowLeft' || e.key == 'ArrowRight') {
     img.style.width = `${w10++}px`;
   }
-  console.log(w10, h10);
 }
 
 // ваше событие здесь!!!
@@ -140,22 +137,15 @@ document.querySelector('.i-10').onkeydown = t10;
 const keys = document.querySelectorAll('.key');
 
 function t11(e) {
-  //   console.log(e.keyCode, e);
   const keyCode = e.keyCode || e.which;
   const key = document.querySelector(`.key[data="${keyCode}"`);
   key.classList.toggle('pressed');
-  //console.log(e, key);
 }
 function t12(e) {
-  console.log(e, 'keyup');
   const keyCode = e.keyCode || e.which;
   const key = document.querySelector(`.key[data="${keyCode}"`);
   key.classList.toggle('pressed');
-}
-function t13(e) {
-  console.log(e);
 }
 // ваше событие здесь!!!
 document.querySelector('.i-11').onkeydown = t11;
 document.querySelector('.i-11').onkeyup = t12;
-document.querySelector('.i-11').onkeypress = t13;
