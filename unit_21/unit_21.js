@@ -116,7 +116,66 @@ document.querySelector('.div-11').addEventListener('touchstart', t11);
     Усложните задачу - подумайте как в массиве сохранить информацию текст, которая будет выводиться если картинка активна. Сам текст можно сохранять в data-text при отрисовке изображения.
     Источник иконок https://www.iconfinder.com/iconsets/unigrid-phantom-halloween
 */
+const img12mins = document.querySelectorAll('.img-12-min');
+const div12max = document.querySelector('.div-12-max');
+const p12 = document.querySelector('.img-12-text');
+const out11 = document.querySelector('.out-11');
+const bNext = document.querySelector('.next');
+const bPrev = document.querySelector('.prev');
+const bReset = document.querySelector('.reset');
 
-function t12() {}
+const a = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
+console.log(div12max.children[0].src);
+
+function t12(e) {
+  //console.log(e.target.src);
+  resetActive();
+  e.target.classList.add('active-img');
+  div12max.children[0].src = e.target.src;
+  //console.log('touch working');
+}
+
+function resetActive() {
+  img12mins.forEach(img => {
+    img.classList.remove('active-img');
+  });
+}
+
+function reset() {
+  resetActive();
+  let i = 0;
+  img12mins.forEach(img => {
+    //console.log(img);
+    if (i === 0) {
+      img.classList.add('active-img');
+      div12max.children[0].src = `img/${a[i]}`;
+    }
+    img.src = `img/${a[i]}`;
+    i++;
+  });
+}
+
+function onNextClick() {
+  const activeImg = document.querySelector('.active-img');
+  //console.log(activeImg);
+  // console.log(img12mins);
+  //console.log(img12mins.indexOf(activeImg));
+  //resetActive();
+  console.log(activeImg);
+  const nextElement = activeImg.nextElementSibling;
+  activeImg.classList.remove('active-img');
+  nextElement.classList.add('active-img');
+  div12max.children[0].src = nextElement.src;
+}
+
+reset(); // первоначальное состояние при загрузке страницы
 
 // ваше событие здесь!!!
+
+img12mins.forEach(img12 => {
+  img12.addEventListener('touchstart', t12);
+});
+
+bReset.onclick = reset;
+
+bNext.onclick = onNextClick;
