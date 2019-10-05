@@ -286,7 +286,7 @@ function func_15() {
   } while (z <= 568);
   return d;
 }
-//console.log(func_15());
+console.log(func_15());
 
 // Task 16
 // На странице есть три параграфа p.task-16. Используя цикл
