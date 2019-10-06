@@ -47,39 +47,71 @@ document.querySelector('.div-4').oncontextmenu = t4;
 // Task 5 ============================================
 /*   Создайте блок div-5. Добавьте на него событие onmousedown. При срабатывании события выводите в out-5 количество срабатываний события. В комментариях опишите результат. */
 
-function t5() {}
-
+let c5 = 0;
+function t5() {
+  c5++;
+  document.querySelector('.out-5').textContent = c5;
+}
 // ваше событие здесь!!!
+document.querySelector('.div-5').onmousedown = t5;
+// срабатывает при клике
 
 // Task 6 ============================================
 /*  Создайте блок div-6. Добавьте на него событие onmouseenter. При срабатывании события выводите в out-6 количество срабатываний события. В комментариях опишите результат. */
 
-function t6() {}
-
+let c6 = 0;
+function t6() {
+  c6++;
+  document.querySelector('.out-6').textContent = c6;
+}
 // ваше событие здесь!!!
+document.querySelector('.div-6').onmouseenter = t6;
+// срабатывает как ожидается
 
 // Task 7 ============================================
 /*   Создайте блок div-7. Добавьте на него событие onmouseleave. При срабатывании события выводите в out-7 количество срабатываний события. В комментариях опишите результат.*/
 
-function t7() {}
-
+let c7 = 0;
+function t7() {
+  c7++;
+  document.querySelector('.out-7').textContent = c7;
+}
 // ваше событие здесь!!!
+document.querySelector('.div-7').onmouseleave = t7;
+// срабатывает как ожидается
 
 // Task 8 ============================================
 /*   Создайте блок div-8. Добавьте на него событие onmouseout. При срабатывании события выводите в out-8 количество срабатываний события. В комментариях опишите результат.*/
 
-function t8() {}
-
+let c8 = 0;
+function t8() {
+  c8++;
+  document.querySelector('.out-8').textContent = c8;
+}
 // ваше событие здесь!!!
+document.querySelector('.div-8').onmouseout = t8;
+// срабатывает так же как mouseleave
 
 // Task 9 ============================================
 /* Создайте блок div-9. Добавьте на него событие onmouseover. При срабатывании события выводите в out-9 количество срабатываний события. В комментариях опишите результат. */
 
-function t9() {}
-
+let c9 = 0;
+function t9() {
+  c9++;
+  document.querySelector('.out-9').textContent = c9;
+}
 // ваше событие здесь!!!
+document.querySelector('.div-9').onmouseover = t9;
+//   поведение как у mouseenter
 
 // Task 10 ============================================
 /*  Создайте блок div-10. Добавьте на него событие onmouseup. При срабатывании события выводите в out-10 количество срабатываний события. В комментариях опишите результат.*/
 
-function t10() {}
+let c10 = 0;
+function t10() {
+  c10++;
+  document.querySelector('.out-10').textContent = c10;
+}
+// ваше событие здесь!!!
+document.querySelector('.div-10').onmouseup = t10;
+//   поведение при отжатии кнопки мыши
