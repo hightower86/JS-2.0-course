@@ -157,15 +157,22 @@ function reset() {
 
 function onNextClick() {
   const activeImg = document.querySelector('.active-img');
-  //console.log(activeImg);
-  // console.log(img12mins);
-  //console.log(img12mins.indexOf(activeImg));
-  //resetActive();
-  console.log(activeImg);
-  const nextElement = activeImg.nextElementSibling;
+  console.log(img12mins[0]);
+  const idxOfActive = Array.from(img12mins).indexOf(activeImg);
+  console.log(idxOfActive, img12mins.length);
+
+  const nextElement =
+    idxOfActive < img12mins.length - 1
+      ? activeImg.nextElementSibling
+      : img12mins[0];
+
+  console.log(nextElement);
+
   activeImg.classList.remove('active-img');
   nextElement.classList.add('active-img');
+
   div12max.children[0].src = nextElement.src;
+  console.log(Array.from(img12mins).indexOf(nextElement));
 }
 
 reset(); // первоначальное состояние при загрузке страницы
