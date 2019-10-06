@@ -107,9 +107,9 @@ function t11(e) {
     '.out-11'
   ).textContent = `${e.touches[0].radiusX} -- ${e.touches[0].radiusY}`;
 }
-
 // ваше событие здесь!!!
 document.querySelector('.div-11').addEventListener('touchstart', t11);
+
 // Task 12 ============================================
 /*  Мини проект. Ознакомьтесь с версткой в задании 12. Добавьте touch события так, чтобы при клике на img-12-min картинка появлялась в блоке div-12-max. Если нажимается кнопка prev - то появляется изображение идущее перед текущим. Если нажимается кнопка next - то после текущего. Выбор изображений зациклен.  Изображение, которое сейчас дублируется в большом блоке должно выделяться классом .active-img. Добавьте кнопку reset для сброса состояния, когда выводится первое изображение. Все изображения и начальное состояние - выводится из массива 
     a = [1.png, 2.png, 3.png, 4.png, 5.png, 6.png] - изображения находятся в папке img.
@@ -119,20 +119,25 @@ document.querySelector('.div-11').addEventListener('touchstart', t11);
 const img12mins = document.querySelectorAll('.img-12-min');
 const div12max = document.querySelector('.div-12-max');
 const p12 = document.querySelector('.img-12-text');
-const out11 = document.querySelector('.out-11');
+const out12 = document.querySelector('.out-12');
 const bNext = document.querySelector('.next');
 const bPrev = document.querySelector('.prev');
 const bReset = document.querySelector('.reset');
 
-const a = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
-console.log(div12max.children[0].src);
+const a = [
+  ['1.png', 'череп'],
+  ['2.png', 'тыква'],
+  ['3.png', 'паук'],
+  ['4.png', 'яд'],
+  ['5.png', 'котел'],
+  ['6.png', 'рука']
+];
 
 function t12(e) {
-  //console.log(e.target.src);
   resetActive();
   e.target.classList.add('active-img');
   div12max.children[0].src = e.target.src;
-  //console.log('touch working');
+  out12.textContent = e.target.getAttribute('data-text');
 }
 
 function resetActive() {
@@ -148,31 +153,46 @@ function reset() {
     //console.log(img);
     if (i === 0) {
       img.classList.add('active-img');
-      div12max.children[0].src = `img/${a[i]}`;
+      div12max.children[0].src = `img/${a[i][0]}`;
     }
-    img.src = `img/${a[i]}`;
+    img.src = `img/${a[i][0]}`;
+    img.setAttribute('data-text', a[i][1]);
     i++;
   });
 }
 
 function onNextClick() {
   const activeImg = document.querySelector('.active-img');
-  console.log(img12mins[0]);
   const idxOfActive = Array.from(img12mins).indexOf(activeImg);
-  console.log(idxOfActive, img12mins.length);
 
   const nextElement =
     idxOfActive < img12mins.length - 1
       ? activeImg.nextElementSibling
       : img12mins[0];
 
-  console.log(nextElement);
-
   activeImg.classList.remove('active-img');
   nextElement.classList.add('active-img');
 
   div12max.children[0].src = nextElement.src;
-  console.log(Array.from(img12mins).indexOf(nextElement));
+  out12.textContent = nextElement.getAttribute('data-text');
+}
+
+function onPrevClick() {
+  const activeImg = document.querySelector('.active-img');
+  const idxOfActive = Array.from(img12mins).indexOf(activeImg);
+
+  const prevElement =
+    idxOfActive > 0
+      ? activeImg.previousElementSibling
+      : img12mins[img12mins.length - 1];
+
+  console.log(prevElement);
+
+  activeImg.classList.remove('active-img');
+  prevElement.classList.add('active-img');
+
+  div12max.children[0].src = prevElement.src;
+  out12.textContent = prevElement.getAttribute('data-text');
 }
 
 reset(); // первоначальное состояние при загрузке страницы
@@ -184,5 +204,5 @@ img12mins.forEach(img12 => {
 });
 
 bReset.onclick = reset;
-
 bNext.onclick = onNextClick;
+bPrev.onclick = onPrevClick;
