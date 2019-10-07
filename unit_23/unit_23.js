@@ -30,31 +30,50 @@ document.querySelector('.b-3').onclick = t3;
 
 // Task 4 ============================================
 /*  Создайте функцию t4 которая записывает  в LS  массив a4 = {hello: world, hi:mahai}. Ключ a4. Проверьте что происходит при повторном вызове функции. Запускается ф-я по кнопкуе b-4.*/
-
-function t4() {}
+const a4 = { hello: 'world', hi: 'mahai' };
+function t4() {
+  const key = 'a4';
+  localStorage.setItem(key, JSON.stringify(a4));
+}
 
 // ваше событие здесь!!!
+document.querySelector('.b-4').onclick = t4;
 
 // Task 5 ============================================
 /*   При нажатии кнопки t5 выведите из LS сохранненный массив a24. Выведите в out-4 в формате ключ пробел значение перенос строки. */
 
-function t5() {}
+function t5() {
+  const k = 'a4';
+  document.querySelector('.out-5').innerHTML = `${k} ${localStorage.getItem(
+    k
+  )}<br>`;
+}
 
 // ваше событие здесь!!!
+document.querySelector('.b-5').onclick = t5;
 
 // Task 6 ============================================
 /*  Создайте функцию t6 которая очищает весь LS. Запуск по кнопке b-6*/
 
-function t6() {}
+function t6() {
+  localStorage.clear();
+}
 
 // ваше событие здесь!!!
+document.querySelector('.b-6').onclick = t6;
 
 // Task 7 ============================================
 /*  Создайте input i-7 куда пользователь может вводить числа и строки. Создайте массив a7. Когда пользователь нажимает кнопку b-7 число должно добавляться в массив. Массив должен сохраняться в LS с ключем a7.*/
-
-function t7() {}
+const k7 = 'a7';
+const a7 = [];
+function t7() {
+  const val = document.querySelector('.i-7').value;
+  a7.push(val);
+  localStorage.setItem(k7, a7);
+}
 
 // ваше событие здесь!!!
+document.querySelector('.b-7').onclick = t7;
 
 // Task 8 ============================================
 /*   Создайте функцию t8 при запуске которой из a7 удаляется последний элемент. После чего массив сохраняется в LS с ключем a7. Использовать массив из предыдущего задания. */
