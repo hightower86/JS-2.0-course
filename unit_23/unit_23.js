@@ -107,19 +107,36 @@ radios.forEach(radio => {
 // Task 10 ============================================
 /*  Проект. Дана переменная card - корзина. Добавьте кнопку b-10 и функцию t10, которые сохраняют card в LS.*/
 
-const card = {
+const cart = {
   apple: 3,
   grape: 2
 };
 
-function t10() {}
+const task10 = document.querySelector('.task-10');
+
+function t10() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+document.querySelector('.b-10').onclick = t10;
 // Task 11 ============================================
 /*  Создайте фукнцию t11 которая читает корзину из LS и выводит на страницу в виде таблицы. Формат -  название товара - количество. Функция должна вызываться всегда после перезаписи LS ( в данном случае - просто добавьте ее вызов в нужные функции). */
 
-function t11() {}
-
+function t11() {
+  const cart = localStorage.getItem('cart');
+  //if (cart !== null) {
+  const table = document.createElement('table');
+  const tr = document.createElement('tr');
+  const td = document.createElement('td');
+  td.innerHTML = 'row';
+  tr.appendChild(td);
+  table.appendChild(tr);
+  //}
+  task10.appendChild(table);
+  console.log(table);
+}
 // ваше событие здесь!!!
-
+document.querySelector('.b-11').onclick = t11();
 // Task 12 ============================================
 /*  Добавьте в таблицу кнопки плюс и минус возле каждого товара. При нажатии кнопки - изменяйте количество товаров в card, обновляйте LS, выводите на страницу. */
 
