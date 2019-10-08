@@ -71,23 +71,38 @@ function t7() {
   a7.push(val);
   localStorage.setItem(k7, a7);
 }
-
 // ваше событие здесь!!!
 document.querySelector('.b-7').onclick = t7;
 
 // Task 8 ============================================
 /*   Создайте функцию t8 при запуске которой из a7 удаляется последний элемент. После чего массив сохраняется в LS с ключем a7. Использовать массив из предыдущего задания. */
-
-function t8() {}
-
-// ваше событие здесь!!!
+function t8() {
+  a7.pop();
+  localStorage.setItem(k7, a7);
+}
+document.querySelector('.b-8').onclick = t8;
 
 // Task 9 ============================================
 /* Создайте 3 radiobutton c именем rb-9. Задайте для каждого value: #fff, #c0c0c0, #555. При изменении radibutton записывайте значение value в LS с ключем bg. Добавьте слушатель событий на изменение LS. Если есть ключ bg то при наступлении события изменять цвет фона на заданный в LS. */
 
-function t9() {}
+const radios = document.getElementsByName('rb-9');
+
+function t9(e) {
+  //console.log(e.target.value);
+  localStorage.setItem('bg', e.target.value);
+}
+
+window.addEventListener('storage', function() {
+  if (localStorage.getItem('bg') !== null);
+  document.querySelector(
+    'fieldset'
+  ).style.backgroundColor = localStorage.getItem('bg');
+});
 
 // ваше событие здесь!!!
+radios.forEach(radio => {
+  radio.oninput = t9;
+});
 
 // Task 10 ============================================
 /*  Проект. Дана переменная card - корзина. Добавьте кнопку b-10 и функцию t10, которые сохраняют card в LS.*/
