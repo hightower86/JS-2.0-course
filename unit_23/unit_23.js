@@ -119,24 +119,48 @@ function t10() {
 }
 
 document.querySelector('.b-10').onclick = t10;
+
 // Task 11 ============================================
 /*  Создайте фукнцию t11 которая читает корзину из LS и выводит на страницу в виде таблицы. Формат -  название товара - количество. Функция должна вызываться всегда после перезаписи LS ( в данном случае - просто добавьте ее вызов в нужные функции). */
 
 function t11() {
-  const cart = localStorage.getItem('cart');
-  //if (cart !== null) {
+  const cart = JSON.parse(localStorage.getItem('cart'));
+  console.log(cart);
   const table = document.createElement('table');
-  const tr = document.createElement('tr');
-  const td = document.createElement('td');
-  td.innerHTML = 'row';
-  tr.appendChild(td);
-  table.appendChild(tr);
-  //}
+  if (cart !== null) {
+    // console.log(cart);
+    const tr = document.createElement('tr');
+    const th = document.createElement('th');
+    th.innerHTML = 'Item';
+    const thi = document.createElement('th');
+    thi.innerHTML = 'Quantity';
+    tr.appendChild(th);
+    tr.appendChild(thi);
+    table.appendChild(tr);
+    for (const key in cart) {
+      const newTr = document.createElement('tr');
+      const td = document.createElement('td');
+      const td1 = document.createElement('td');
+      const bPlus = document.createElement('button');
+      const bMinus = document.createElement('button');
+      bPlus.innerHTML = '+';
+      bMinus.innerHTML = '-';
+      td.textContent = key;
+      td1.textContent = cart[key];
+      newTr.appendChild(td);
+      newTr.appendChild(td1);
+      newTr.appendChild(bPlus);
+      newTr.appendChild(bMinus);
+      table.appendChild(newTr);
+      console.log(key, cart[key]);
+    }
+  }
   task10.appendChild(table);
   console.log(table);
 }
 // ваше событие здесь!!!
-document.querySelector('.b-11').onclick = t11();
+document.querySelector('.b-11').onclick = t11;
+
 // Task 12 ============================================
 /*  Добавьте в таблицу кнопки плюс и минус возле каждого товара. При нажатии кнопки - изменяйте количество товаров в card, обновляйте LS, выводите на страницу. */
 
