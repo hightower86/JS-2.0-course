@@ -125,10 +125,8 @@ document.querySelector('.b-10').onclick = t10;
 
 function t11() {
   const cart = JSON.parse(localStorage.getItem('cart'));
-  console.log(cart);
   const table = document.createElement('table');
   if (cart !== null) {
-    // console.log(cart);
     const tr = document.createElement('tr');
     const th = document.createElement('th');
     th.innerHTML = 'Item';
@@ -143,6 +141,10 @@ function t11() {
       const td1 = document.createElement('td');
       const bPlus = document.createElement('button');
       const bMinus = document.createElement('button');
+      bPlus.style.marginTop = `5px`;
+      bPlus.style.marginBottom = `5px`;
+      bMinus.style.marginTop = `8px`;
+      bMinus.style.marginBottom = `8px`;
       bPlus.innerHTML = '+';
       bPlus.onclick = t12;
       bMinus.innerHTML = '-';
@@ -168,17 +170,17 @@ document.querySelector('.b-11').onclick = t11;
 /*  Добавьте в таблицу кнопки плюс и минус возле каждого товара. При нажатии кнопки - изменяйте количество товаров в card, обновляйте LS, выводите на страницу. */
 
 function t12(e) {
-  console.log(e.target);
-  console.log(e.target.innerText);
-  console.log(+e.target.parentNode.cells[1].innerText);
+  const cart = JSON.parse(localStorage.getItem('cart'));
+
   let quantity = +e.target.parentNode.cells[1].innerText;
   if (e.target.innerText == '+') {
     quantity++;
-    e.target.parentNode.cells[1].innerText = quantity;
   } else if (e.target.innerText == '-') {
     quantity--;
-    e.target.parentNode.cells[1].innerText = quantity;
   }
+  e.target.parentNode.cells[1].innerText = quantity;
+  cart[e.target.parentNode.cells[0].innerText] = quantity;
+  localStorage.setItem('cart', JSON.stringify(cart));
 }
 // ваше событие здесь!!!
 
@@ -192,6 +194,6 @@ function t13() {}
 // Task 14 ============================================
 /*  Добавьте функцию t13, которая при загрузке страницы проверяет наличие card в LS и если есть -выводит его на страницу. Если нет - пишет корзина пуста. */
 
-function t13() {}
+function t14() {}
 
 // ваше событие здесь!!!
