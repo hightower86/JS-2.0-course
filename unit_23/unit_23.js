@@ -124,8 +124,23 @@ document.querySelector('.b-10').onclick = t10;
 /*  Создайте фукнцию t11 которая читает корзину из LS и выводит на страницу в виде таблицы. Формат -  название товара - количество. Функция должна вызываться всегда после перезаписи LS ( в данном случае - просто добавьте ее вызов в нужные функции). */
 
 function t11() {
+  while (out10.firstChild) {
+    out10.removeChild(out10.firstChild);
+  } // clean out10
+
   const cart = JSON.parse(localStorage.getItem('cart'));
   const table = document.createElement('table');
+  const tf = document.createElement('tfoot');
+  const tfr = document.createElement('tr');
+  const tfd = document.createElement('td');
+  const tfd1 = document.createElement('td');
+  tfd1.innerText = 0;
+  tfr.appendChild(tfd);
+  tfr.appendChild(tfd1);
+  tf.appendChild(tfr);
+  //console.log(table);
+  table.appendChild(tf);
+
   if (cart !== null) {
     const tr = document.createElement('tr');
     const th = document.createElement('th');
@@ -157,11 +172,11 @@ function t11() {
       newTr.appendChild(bPlus);
       newTr.appendChild(bMinus);
       table.appendChild(newTr);
-      console.log(key, cart[key]);
+      //console.log(key, cart[key]);
     }
   }
   out10.append(table);
-  console.log(table);
+  //console.log(table);
 }
 // ваше событие здесь!!!
 document.querySelector('.b-11').onclick = t11;
@@ -181,16 +196,28 @@ function t12(e) {
   e.target.parentNode.cells[1].innerText = quantity;
   cart[e.target.parentNode.cells[0].innerText] = quantity;
   localStorage.setItem('cart', JSON.stringify(cart));
+  let sum = 0;
+  for (const key in cart) {
+    sum += cart[key];
+  }
+
+  const footer = e.target.parentNode.parentNode.firstChild;
+  footer.firstChild.cells[1].innerText = sum;
+  //console.log(sum);
 }
 // ваше событие здесь!!!
 
 // Task 13 ============================================
 /*  Добавьте в таблицу footer который считает общее количество товара. */
 
-function t13() {}
+function t13() {
+  const cart = localStorage.getItem('cart');
+
+  out10.innerHTML = cart !== null ? cart : 'cart is empty';
+}
 
 // ваше событие здесь!!!
-
+window.onload = t13;
 // Task 14 ============================================
 /*  Добавьте функцию t13, которая при загрузке страницы проверяет наличие card в LS и если есть -выводит его на страницу. Если нет - пишет корзина пуста. */
 
