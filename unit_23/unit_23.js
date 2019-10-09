@@ -112,7 +112,7 @@ const cart = {
   grape: 2
 };
 
-const task10 = document.querySelector('.task-10');
+const out10 = document.querySelector('.out-10');
 
 function t10() {
   localStorage.setItem('cart', JSON.stringify(cart));
@@ -144,7 +144,10 @@ function t11() {
       const bPlus = document.createElement('button');
       const bMinus = document.createElement('button');
       bPlus.innerHTML = '+';
+      bPlus.onclick = t12;
       bMinus.innerHTML = '-';
+      bMinus.onclick = t12;
+
       td.textContent = key;
       td1.textContent = cart[key];
       newTr.appendChild(td);
@@ -155,7 +158,7 @@ function t11() {
       console.log(key, cart[key]);
     }
   }
-  task10.appendChild(table);
+  out10.append(table);
   console.log(table);
 }
 // ваше событие здесь!!!
@@ -164,8 +167,19 @@ document.querySelector('.b-11').onclick = t11;
 // Task 12 ============================================
 /*  Добавьте в таблицу кнопки плюс и минус возле каждого товара. При нажатии кнопки - изменяйте количество товаров в card, обновляйте LS, выводите на страницу. */
 
-function t12() {}
-
+function t12(e) {
+  console.log(e.target);
+  console.log(e.target.innerText);
+  console.log(+e.target.parentNode.cells[1].innerText);
+  let quantity = +e.target.parentNode.cells[1].innerText;
+  if (e.target.innerText == '+') {
+    quantity++;
+    e.target.parentNode.cells[1].innerText = quantity;
+  } else if (e.target.innerText == '-') {
+    quantity--;
+    e.target.parentNode.cells[1].innerText = quantity;
+  }
+}
 // ваше событие здесь!!!
 
 // Task 13 ============================================
