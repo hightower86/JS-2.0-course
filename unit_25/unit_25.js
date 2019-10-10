@@ -51,10 +51,28 @@ document.querySelector('.b-2').onclick = t2;
 // Task 3 ============================================
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 3. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет сумму чисел.  Выведите в out-3 результат. Запускаться функция должна по нажатию b-3. */
 
-function t3() {}
+function t3() {
+  const xhttp = new XMLHttpRequest();
+
+  xhttp.onreadystatechange = function() {
+    if (this.readyState === 4 && this.status === 200) {
+      func(this.responseText);
+    }
+  };
+
+  function func(data) {
+    document.querySelector('.out-3').textContent = data;
+  }
+  xhttp.open(
+    'GET',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=3&num1=45&num2=99',
+    true
+  );
+  xhttp.send();
+}
 
 // ваше событие здесь!!!
-
+document.querySelector('.b-3').onclick = t3;
 // Task 4 ============================================
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 4. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет случайное число в заданном диапазоне. Не забывайте указывать параметр auth (ключ в чате).  Выведите в out-4 результат. Запускаться функция должна по нажатию b-4. */
 
