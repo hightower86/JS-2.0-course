@@ -25,9 +25,28 @@ document.querySelector('.b-1').onclick = t1;
 // Task 2 ============================================
 /* Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 2. Добавьте параметр name с вашим именем на латинице. Если все сделано верно, сервер пришлет строку hello ваше имя. Выведите в out-2 результат. Запускаться функция должна по нажатию b-2. */
 
-function t2() {}
+function t2() {
+  const xhttp = new XMLHttpRequest();
+
+  xhttp.onreadystatechange = function() {
+    if (this.readyState === 4 && this.status === 200) {
+      func(this.responseText);
+    }
+  };
+
+  function func(data) {
+    document.querySelector('.out-2').textContent = data;
+  }
+  xhttp.open(
+    'GET',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=2&name=Adel',
+    true
+  );
+  xhttp.send();
+}
 
 // ваше событие здесь!!!
+document.querySelector('.b-2').onclick = t2;
 
 // Task 3 ============================================
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 3. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет сумму чисел.  Выведите в out-3 результат. Запускаться функция должна по нажатию b-3. */
