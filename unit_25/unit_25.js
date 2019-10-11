@@ -164,17 +164,66 @@ document.querySelector('.b-6').onclick = t6;
 // Task 7 ============================================
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 7. Если все сделано верно, сервер случайную ссылку на изображение. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-7 результат. Запускаться функция должна по нажатию b-7. */
 
-function t7() {}
+function t7() {
+  xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState !== 4) return;
+    if (xhr.status != 200) {
+      alert(`${xhr.status}:${xhr.statusText}`);
+    } else {
+      func(xhr.responseText);
+    }
+  };
+  function func(resp) {
+    document.querySelector('.out-7').innerHTML =
+      //resp;
+      `<img src=${resp} width=50px/>`;
+  }
+
+  xhr.open(
+    'GET',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=7',
+    true
+  );
+  xhr.send();
+
+  document.querySelector('.out-7').textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
-
+document.querySelector('.b-7').onclick = t7;
 // Task 8 ============================================
 /* Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 8. В качестве параметра по очереди укажите year равный году вашего рождения. Если все правильно сервер вернет ваш возраст. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-8 результат. Запускаться функция должна по нажатию b-8.*/
+const b8 = document.querySelector('.b-8');
+const out8 = document.querySelector('.out-8');
+function t8() {
+  xhr = new XMLHttpRequest();
 
-function t8() {}
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState != 4) return;
+
+    if (xhr.status != 200) {
+      alert(`${xhr.status}: ${xhr.statusText}`);
+    } else {
+      func(xhr.responseText);
+    }
+  };
+
+  function func(resp) {
+    out8.textContent = resp;
+  }
+  xhr.open(
+    'GET',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=8&year=1974',
+    true
+  );
+  xhr.send();
+
+  out8.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
-
+b8.onclick = t8;
 // Task 9 ============================================
 /* Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 9. В качестве параметра по очереди укажите m = 1, d=1, y=1. Если все сделано верно, сервер возвратит дату или месяц или год. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-9 результат. Запускаться функция должна по нажатию b-9. */
 
