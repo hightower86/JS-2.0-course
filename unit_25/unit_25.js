@@ -352,13 +352,37 @@ function t12() {
 
 // ваше событие здесь!!!
 b12.onclick = t12;
+
 // Task 13 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 4. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет случайное число в заданном диапазоне. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-13 результат. Запускаться функция должна по нажатию b-13.*/
+const b13 = document.querySelector('.b-13');
+const out13 = document.querySelector('.out-13');
 
-function t13() {}
+function t13() {
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (this.readyState !== 4) return;
+    if (this.status !== 200) {
+      alert(`${this.status}: ${this.statusText}`);
+    } else {
+      func(this.responseText);
+    }
+  };
+  function func(resp) {
+    out13.textContent = resp;
+  }
+  xhr.open(
+    'POST',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=4&num1=22&num2=55',
+    true
+  );
+  xhr.send();
+
+  out13.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
-
+b13.onclick = t13;
 // Task 14 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 5. Если все сделано верно, сервер вернет текущее время и дату. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-14 результат. Запускаться функция должна по нажатию b-14.*/
 
