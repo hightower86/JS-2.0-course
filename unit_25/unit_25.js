@@ -224,19 +224,71 @@ function t8() {
 
 // ваше событие здесь!!!
 b8.onclick = t8;
+
 // Task 9 ============================================
 /* Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 9. В качестве параметра по очереди укажите m = 1, d=1, y=1. Если все сделано верно, сервер возвратит дату или месяц или год. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-9 результат. Запускаться функция должна по нажатию b-9. */
+const b9 = document.querySelector('.b-9');
+const out9 = document.querySelector('.out-9');
+function t9() {
+  const xhr = new XMLHttpRequest();
 
-function t9() {}
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState != 4) return;
+
+    if (xhr.status != 200) {
+      alert(`${xhr.status}: ${xhr.statusText}`);
+    } else {
+      func(xhr.responseText);
+    }
+  };
+
+  function func(resp) {
+    out9.textContent = resp;
+  }
+
+  xhr.open(
+    'GET',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=9&m=1&d=1&y=1',
+    true
+  );
+  xhr.send();
+  out9.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
+b9.onclick = t9;
 
 // Task 10 ============================================
-/*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1. Если все сделано верно, сервер пришлет строку hello. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-10 результат. Запускаться функция должна по нажатию b-10.
+//  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1. Если все сделано верно, сервер пришлет строку hello. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-10 результат. Запускаться функция должна по нажатию b-10.
+const b10 = document.querySelector('.b-10');
+const out10 = document.querySelector('.out-10');
 
-*/
+function t10() {
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState !== 4) return;
+    if (xhr.status !== 200) {
+      alert(`${xhr.status}: ${xhr.statusText}`);
+    } else {
+      func(xhr.responseText);
+    }
+  };
 
-function t10() {}
+  function func(resp) {
+    out10.textContent = resp;
+  }
+
+  xhr.open(
+    'POST',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=1',
+    true
+  );
+  xhr.send();
+
+  out10.textContent = '...loading...';
+}
+
+b10.onclick = t10;
 // Task 11 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 2. Добавьте параметр name с вашим именем на латинице. Если все сделано верно, сервер пришлет строку hello ваше имя. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-11 результат. Запускаться функция должна по нажатию b-11. */
 
