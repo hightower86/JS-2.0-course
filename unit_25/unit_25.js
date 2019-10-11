@@ -97,19 +97,69 @@ function t4() {
 
 // ваше событие здесь!!!
 document.querySelector('.b-4').onclick = t4;
+
 // Task 5 ============================================
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 5. Если все сделано верно, сервер вернет текущее время и дату. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-5 результат. Запускаться функция должна по нажатию b-5. */
 
-function t5() {}
+function t5() {
+  const xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState != 4) return;
+    if (xhr.status != 200) {
+      alert(xhr.status + ' : ' + xhr.statusText);
+    } else {
+      func(xhr.responseText);
+    }
+  };
+
+  function func(resp) {
+    document.querySelector('.out-5').textContent = resp;
+  }
+
+  xhr.open(
+    'GET',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=5',
+    true
+  );
+  xhr.send();
+  document.querySelector('.out-5').textContent = '...loading';
+}
 
 // ваше событие здесь!!!
+document.querySelector('.b-5').onclick = t5;
 
 // Task 6 ============================================
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 6. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет большее число. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-6 результат. Запускаться функция должна по нажатию b-6. */
 
-function t6() {}
+function t6() {
+  const xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState != 4) return;
+    if (xhr.status != 200) {
+      alert(`${xhr.status}: ${xhr.statusText}`);
+    } else {
+      func(xhr.responseText);
+    }
+  };
+
+  function func(resp) {
+    document.querySelector('.out-6').textContent = resp;
+  }
+
+  xhr.open(
+    'GET',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=6&num1=23&num2=90',
+    true
+  );
+  xhr.send();
+
+  document.querySelector('.out-6').textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
+document.querySelector('.b-6').onclick = t6;
 
 // Task 7 ============================================
 /*  Отправьте GET запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 7. Если все сделано верно, сервер случайную ссылку на изображение. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-7 результат. Запускаться функция должна по нажатию b-7. */
