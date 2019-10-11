@@ -383,20 +383,67 @@ function t13() {
 
 // ваше событие здесь!!!
 b13.onclick = t13;
+
 // Task 14 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 5. Если все сделано верно, сервер вернет текущее время и дату. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-14 результат. Запускаться функция должна по нажатию b-14.*/
+const b14 = document.querySelector('.b-14');
+const out14 = document.querySelector('.out-14');
+function t14() {
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (this.readyState !== 4) return;
+    if (this.status !== 200) {
+      alert(`${this.status}: ${this.statusText}`);
+    } else {
+      func(this.responseText);
+    }
+  };
+  function func(resp) {
+    out14.textContent = resp;
+  }
+  xhr.open(
+    'POST',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=5',
+    true
+  );
+  xhr.send();
 
-function t14() {}
+  out14.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
+b14.onclick = t14;
 
 // Task 15============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 6. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет большее число. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-15 результат. Запускаться функция должна по нажатию b-15. */
+const b15 = document.querySelector('.b-15');
+const out15 = document.querySelector('.out-15');
+function t15() {
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (this.readyState !== 4) return;
+    if (this.status !== 200) {
+      alert(`${this.status}: ${this.statusText}`);
+    } else {
+      func(this.responseText);
+    }
+  };
+  function func(resp) {
+    out15.textContent = resp;
+  }
 
-function t15() {}
+  xhr.open(
+    'POST',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=6&num1=22&num2=55',
+    true
+  );
+  xhr.send();
+
+  out15.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
-
+b15.onclick = t15;
 // Task 16 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 7. Если все сделано верно, сервер случайную ссылку на изображение. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-16 результат. Запускаться функция должна по нажатию b-16. */
 
