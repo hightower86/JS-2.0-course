@@ -289,20 +289,69 @@ function t10() {
 }
 
 b10.onclick = t10;
+
 // Task 11 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 2. Добавьте параметр name с вашим именем на латинице. Если все сделано верно, сервер пришлет строку hello ваше имя. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-11 результат. Запускаться функция должна по нажатию b-11. */
+const b11 = document.querySelector('.b-11');
+const out11 = document.querySelector('.out-11');
 
-function t11() {}
+function t11() {
+  const xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState !== 4) return;
+    if (xhr.status !== 200) {
+      alert(`${this.status}: ${this.statusText}`);
+    } else {
+      func(this.responseText);
+    }
+  };
+
+  function func(resp) {
+    out11.textContent = resp;
+  }
+
+  xhr.open(
+    'POST',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=2&name=Adel',
+    true
+  );
+  xhr.send();
+
+  out11.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
+b11.onclick = t11;
 
 // Task 12 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 3. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет сумму чисел. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-12 результат. Запускаться функция должна по нажатию b-12.*/
-
-function t12() {}
+const b12 = document.querySelector('.b-12');
+const out12 = document.querySelector('.out-12');
+function t12() {
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState !== 4) return;
+    if (xhr.status !== 200) {
+      alert(`${xhr.status}: ${xhr.statusText}`);
+    } else {
+      func(xhr.responseText);
+    }
+  };
+  function func(resp) {
+    out12.textContent = resp;
+  }
+  xhr.open(
+    'POST',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=3&num1=22&num2=55',
+    true
+  );
+  xhr.send();
+  out12.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
-
+b12.onclick = t12;
 // Task 13 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 4. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет случайное число в заданном диапазоне. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-13 результат. Запускаться функция должна по нажатию b-13.*/
 
