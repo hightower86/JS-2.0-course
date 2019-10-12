@@ -65,31 +65,67 @@ function t4() {
 b4.onclick = t4;
 // Task 5 ============================================
 /*  Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 5. Если все сделано верно, сервер вернет текущее время и дату. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-5 результат. Запускаться функция должна по нажатию b-5. */
-
-function t5() {}
+const b5 = document.querySelector('.b-5');
+const out5 = document.querySelector('.out-5');
+function t5() {
+  fetch(
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=5'
+  )
+    .then(resp => resp.text())
+    .then(data => (out5.textContent = data));
+  out5.textContent = '..loading..';
+}
 
 // ваше событие здесь!!!
+b5.onclick = t5;
 
 // Task 6 ============================================
 /*  Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 6. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет большее число. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-6 результат. Запускаться функция должна по нажатию b-6. */
-
-function t6() {}
+const b6 = document.querySelector('.b-6');
+const out6 = document.querySelector('.out-6');
+function t6() {
+  fetch(
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=6&num1=44&num2=99'
+  )
+    .then(resp => resp.text())
+    .then(data => (out6.textContent = data));
+  out6.textContent = '..loading..';
+}
 
 // ваше событие здесь!!!
+b6.onclick = t6;
 
 // Task 7 ============================================
 /*  Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 7. Если все сделано верно, сервер случайную ссылку на изображение. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-7 результат. Запускаться функция должна по нажатию b-7. */
-
-function t7() {}
+const b7 = document.querySelector('.b-7');
+const out7 = document.querySelector('.out-7');
+function t7() {
+  fetch(
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=7'
+  )
+    .then(resp => resp.text())
+    .then(data => (out7.innerHTML = `<img src=${data} width=70px/>`));
+  out7.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
+b7.onclick = t7;
 
 // Task 8 ============================================
 /* Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 8. В качестве параметра по очереди укажите year равный году вашего рождения. Если все правильно сервер вернет ваш возраст. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-8 результат. Запускаться функция должна по нажатию b-8.*/
-
-function t8() {}
+const b8 = document.querySelector('.b-8');
+const out8 = document.querySelector('.out-8');
+function t8() {
+  fetch(
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=8&year=1974'
+  )
+    .then(resp => resp.text())
+    .then(data => (out8.textContent = data));
+  out8.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
+b8.onclick = t8;
 
 // Task 9 ============================================
 /* Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 9. В качестве параметра по очереди укажите m = 1, d=1, y=1. Если все сделано верно, сервер возвратит дату или месяц или год. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-9 результат. Запускаться функция должна по нажатию b-9. */
