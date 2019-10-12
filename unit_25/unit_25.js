@@ -475,14 +475,59 @@ function t16() {
 b16.onclick = t16;
 // Task 17 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 8. В качестве параметра по очереди укажите year равный году вашего рождения. Если все правильно сервер вернет ваш возраст. Не забывайте указывать параметр auth (ключ в чате).Выведите в out-17 результат. Запускаться функция должна по нажатию b-17. */
-
-function t17() {}
+const b17 = document.querySelector('.b-17');
+const out17 = document.querySelector('.out-17');
+function t17() {
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (this.readyState !== 4) return;
+    if (this.status !== 200) {
+      alert(`${this.status}: ${this.statusText}`);
+    } else {
+      func(this.responseText);
+    }
+  };
+  function func(resp) {
+    out17.textContent = resp;
+  }
+  xhr.open(
+    'POST',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=8&year=1974',
+    true
+  );
+  xhr.send();
+  out17.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
+b17.onclick = t17;
 
 // Task 18 ============================================
 /*  Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 9. В качестве параметра по очереди укажите m = 1, d=1, y=1. Если все сделано верно, сервер возвратит дату или месяц или год. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-18 результат. Запускаться функция должна по нажатию b-18. */
+const b18 = document.querySelector('.b-18');
+const out18 = document.querySelector('.out-18');
+function t18() {
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (this.readyState !== 4) return;
+    if (this.status !== 200) {
+      alert(`${this.status}: ${this.statusText}`);
+    } else {
+      func(this.responseText);
+    }
+  };
 
-function t18() {}
+  function func(resp) {
+    out18.textContent = resp;
+  }
+  xhr.open(
+    'POST',
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=9&m=1,&d=1,&y=1',
+    true
+  );
+  xhr.send();
+  out18.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
+b18.onclick = t18;
