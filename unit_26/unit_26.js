@@ -31,20 +31,38 @@ function t2() {
 
 // ваше событие здесь!!!
 b2.onclick = t2;
+
 // Task 3 ============================================
 /*  Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 3. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет сумму чисел.  Выведите в out-3 результат. Запускаться функция должна по нажатию b-3. */
-
-function t3() {}
+const b3 = document.querySelector('.b-3');
+const out3 = document.querySelector('.out-3');
+function t3() {
+  fetch(
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=3&num1=44&num2=99'
+  )
+    .then(resp => resp.text())
+    .then(data => (out3.textContent = data));
+  out3.textContent = '..loading..';
+}
 
 // ваше событие здесь!!!
+b3.onclick = t3;
 
 // Task 4 ============================================
 /*  Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 4. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет случайное число в заданном диапазоне. Не забывайте указывать параметр auth (ключ в чате).  Выведите в out-4 результат. Запускаться функция должна по нажатию b-4. */
-
-function t4() {}
+const b4 = document.querySelector('.b-4');
+const out4 = document.querySelector('.out-4');
+function t4() {
+  fetch(
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=4&num1=44&num2=99'
+  )
+    .then(resp => resp.text())
+    .then(data => (out4.textContent = data));
+  out4.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
-
+b4.onclick = t4;
 // Task 5 ============================================
 /*  Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 5. Если все сделано верно, сервер вернет текущее время и дату. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-5 результат. Запускаться функция должна по нажатию b-5. */
 
