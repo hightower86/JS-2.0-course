@@ -3,17 +3,34 @@
 const b1 = document.querySelector('.b-1');
 const out1 = document.querySelector('.out-1');
 
-function t1() {}
+function t1() {
+  fetch(
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=1'
+  )
+    .then(response => response.text())
+    .then(data => (out1.textContent = data));
 
+  out1.textContent = '...loading...';
+}
 // ваше событие здесь!!!
 b1.onclick = t1;
+
 // Task 2 ============================================
 /* Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 2. Добавьте параметр name с вашим именем на латинице. Если все сделано верно, сервер пришлет строку hello ваше имя. Выведите в out-2 результат. Запускаться функция должна по нажатию b-2. */
+const b2 = document.querySelector('.b-2');
+const out2 = document.querySelector('.out-2');
+function t2() {
+  fetch(
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=2&name=adel'
+  )
+    .then(resp => resp.text())
+    .then(data => (out2.textContent = data));
 
-function t2() {}
+  out2.textContent = '..loading..';
+}
 
 // ваше событие здесь!!!
-
+b2.onclick = t2;
 // Task 3 ============================================
 /*  Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 3. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет сумму чисел.  Выведите в out-3 результат. Запускаться функция должна по нажатию b-3. */
 
