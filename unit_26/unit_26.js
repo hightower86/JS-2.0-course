@@ -129,24 +129,65 @@ b8.onclick = t8;
 
 // Task 9 ============================================
 /* Отправьте GET запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 9. В качестве параметра по очереди укажите m = 1, d=1, y=1. Если все сделано верно, сервер возвратит дату или месяц или год. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-9 результат. Запускаться функция должна по нажатию b-9. */
-
-function t9() {}
-
+const b9 = document.querySelector('.b-9');
+const out9 = document.querySelector('.out-9');
+function t9() {
+  fetch(
+    'http://getpost.itgid.info/index2.php?auth=zhrgB3DxC8LoG7Gcisjc&action=9&m=1&d=1&y=1'
+  )
+    .then(resp => resp.text())
+    .then(data => (out9.textContent = data));
+  out9.textContent = '...loading...';
+}
 // ваше событие здесь!!!
+b9.onclick = t9;
 
 // Task 10 ============================================
-/*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1. Если все сделано верно, сервер пришлет строку hello. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-10 результат. Запускаться функция должна по нажатию b-10.
+// Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1. Если все сделано верно, сервер пришлет строку hello. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-10 результат. Запускаться функция должна по нажатию b-10.
+const b10 = document.querySelector('.b-10');
+const out10 = document.querySelector('.out-10');
 
-*/
+function t10() {
+  // const options = {
+  //   auth: 'zhrgB3DxC8LoG7Gcisjc',
+  //   action: '1'
+  // };
+  fetch('http://getpost.itgid.info/index2.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+      //'Content-Type': 'application/json'
+    },
+    // body: JSON.stringify(options)
+    body: 'auth=zhrgB3DxC8LoG7Gcisjc&action=1'
+  })
+    .then(resp => resp.text())
+    .then(data => (out10.textContent = data));
 
-function t10() {}
+  out10.textContent = '...loading...';
+}
+b10.onclick = t10;
+
 // Task 11 ============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 2. Добавьте параметр name с вашим именем на латинице. Если все сделано верно, сервер пришлет строку hello ваше имя. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-11 результат. Запускаться функция должна по нажатию b-11. */
+const b11 = document.querySelector('.b-11');
+const out11 = document.querySelector('.out-11');
 
-function t11() {}
+function t11() {
+  fetch('http://getpost.itgid.info/index2.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: 'auth=zhrgB3DxC8LoG7Gcisjc&action=2&name=adel'
+  })
+    .then(resp => resp.text())
+    .then(data => (out11.textContent = data));
+  out11.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
-
+b11.onclick = t11;
 // Task 12 ============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 3. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет сумму чисел. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-12 результат. Запускаться функция должна по нажатию b-12.*/
 
