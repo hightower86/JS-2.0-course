@@ -8,9 +8,21 @@
 const b1 = document.querySelector('.b-1');
 const out1 = document.querySelector('.out-1');
 const url = 'http://getpost.itgid.info/index2.php';
-
 const auth = 'auth=zhrgB3DxC8LoG7Gcisjc';
+const contentType = 'application/x-www-form-urlencoded';
+
 function t1() {
+  get1 = new Promise((resolve, reject) => {
+    fetch(`${url}?${auth}&action=1`).then(response => resolve(response.text()));
+  });
+  get2 = new Promise((resolve, reject) => {
+    fetch(`${url}?${auth}&action=2&name=Adel`).then(response =>
+      resolve(response.text())
+    );
+  });
+
+  Promise.all([get1, get2]).then(data => (out1.textContent = data));
+
   out1.textContent = '...loading...';
 }
 
