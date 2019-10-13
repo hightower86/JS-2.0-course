@@ -40,10 +40,27 @@ b1.onclick = t1;
 Выведите в out-2 результат. Запускаться функция должна по нажатию b-2. </p>
 
 */
+const b2 = document.querySelector('.b-2');
+const out2 = document.querySelector('.out-2');
 
-function t2() {}
+function t2() {
+  get1 = new Promise((resolve, reject) => {
+    fetch(`${url}?${auth}&action=3&num1=34&num2=76`).then(response =>
+      resolve(response.text())
+    );
+  });
+  get2 = new Promise((resolve, reject) => {
+    fetch(`${url}?${auth}&action=4&num1=34&num2=76`).then(response =>
+      resolve(response.text())
+    );
+  });
+
+  Promise.all([get1, get2]).then(data => (out2.textContent = data));
+  out2.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
+b2.onclick = t2;
 
 // Task 3 ============================================
 /*  
