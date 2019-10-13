@@ -231,37 +231,112 @@ function t13() {
 
 // ваше событие здесь!!!
 b13.onclick = t13;
+
 // Task 14 ============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 5. Если все сделано верно, сервер вернет текущее время и дату. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-14 результат. Запускаться функция должна по нажатию b-14.*/
+const b14 = document.querySelector('.b-14');
+const out14 = document.querySelector('.out-14');
 
-function t14() {}
+const url = 'http://getpost.itgid.info/index2.php';
+const auth = 'auth=zhrgB3DxC8LoG7Gcisjc';
+const contentType = 'application/x-www-form-urlencoded';
 
+function t14() {
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': contentType
+    },
+    body: `${auth}&action=5`
+  })
+    .then(resp => resp.text())
+    .then(data => (out14.textContent = data));
+  out14.textContent = '...loading...';
+}
 // ваше событие здесь!!!
+b14.onclick = t14;
 
 // Task 15============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 6. Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет большее число. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-15 результат. Запускаться функция должна по нажатию b-15. */
+const b15 = document.querySelector('.b-15');
+const out15 = document.querySelector('.out-15');
 
-function t15() {}
+function t15() {
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': contentType
+    },
+    body: `${auth}&action=6&num1=76&num2=26`
+  })
+    .then(resp => resp.text())
+    .then(data => (out15.textContent = data));
 
+  out15.textContent = '...loading...';
+}
 // ваше событие здесь!!!
+b15.onclick = t15;
 
 // Task 16 ============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 7. Если все сделано верно, сервер случайную ссылку на изображение. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-16 результат. Запускаться функция должна по нажатию b-16. */
+const b16 = document.querySelector('.b-16');
+const out16 = document.querySelector('.out-16');
 
-function t16() {}
+function t16() {
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': contentType
+    },
+    body: `${auth}&action=7`
+  })
+    .then(resp => resp.text())
+    .then(data => (out16.innerHTML = `<img src=${data} width=70px/>`));
 
+  out16.textContent = '...loading...';
+}
 // ваше событие здесь!!!
+b16.onclick = t16;
 
 // Task 17 ============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 8. В качестве параметра по очереди укажите year равный году вашего рождения. Если все правильно сервер вернет ваш возраст. Не забывайте указывать параметр auth (ключ в чате).Выведите в out-17 результат. Запускаться функция должна по нажатию b-17. */
+const b17 = document.querySelector('.b-17');
+const out17 = document.querySelector('.out-17');
 
-function t17() {}
+function t17() {
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': contentType
+    },
+    body: `${auth}&action=8&year=1974`
+  })
+    .then(resp => resp.text())
+    .then(data => (out17.textContent = data));
+
+  out17.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
+b17.onclick = t17;
 
 // Task 18 ============================================
 /*  Отправьте POST запрос (fetch) на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 9. В качестве параметра по очереди укажите m = 1, d=1, y=1. Если все сделано верно, сервер возвратит дату или месяц или год. Не забывайте указывать параметр auth (ключ в чате). Выведите в out-18 результат. Запускаться функция должна по нажатию b-18. */
+const b18 = document.querySelector('.b-18');
+const out18 = document.querySelector('.out-18');
 
-function t18() {}
+function t18() {
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': contentType
+    },
+    body: `${auth}&action=9&m=1&d=1&y=1`
+  })
+    .then(resp => resp.text())
+    .then(data => (out18.textContent = data));
+  out18.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
+b18.onclick = t18;
