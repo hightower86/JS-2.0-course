@@ -11,10 +11,10 @@ const url = 'http://getpost.itgid.info/index2.php';
 const auth = 'auth=zhrgB3DxC8LoG7Gcisjc';
 
 function t1() {
-  get1 = new Promise((resolve, reject) => {
+  const get1 = new Promise((resolve, reject) => {
     fetch(`${url}?${auth}&action=1`).then(response => resolve(response.text()));
   });
-  get2 = new Promise((resolve, reject) => {
+  const get2 = new Promise((resolve, reject) => {
     fetch(`${url}?${auth}&action=2&name=Adel`).then(response =>
       resolve(response.text())
     );
@@ -43,12 +43,12 @@ const b2 = document.querySelector('.b-2');
 const out2 = document.querySelector('.out-2');
 
 function t2() {
-  get1 = new Promise((resolve, reject) => {
+  const get1 = new Promise((resolve, reject) => {
     fetch(`${url}?${auth}&action=3&num1=34&num2=76`).then(response =>
       resolve(response.text())
     );
   });
-  get2 = new Promise((resolve, reject) => {
+  const get2 = new Promise((resolve, reject) => {
     fetch(`${url}?${auth}&action=4&num1=34&num2=76`).then(response =>
       resolve(response.text())
     );
@@ -134,7 +134,7 @@ const out5 = document.querySelector('.out-5');
 const contentType = 'application/x-www-form-urlencoded';
 
 function t5() {
-  get1 = new Promise((res, rej) => {
+  const post1 = new Promise((res, rej) => {
     fetch(url, {
       method: 'POST',
       headers: {
@@ -143,7 +143,7 @@ function t5() {
       body: `${auth}&action=1`
     }).then(resp => res(resp.text()));
   });
-  get2 = new Promise((res, rej) => {
+  const post2 = new Promise((res, rej) => {
     fetch(url, {
       method: 'POST',
       headers: {
@@ -153,7 +153,7 @@ function t5() {
     }).then(resp => res(resp.text()));
   });
 
-  Promise.all([get1, get2]).then(data => (out5.textContent = data));
+  Promise.all([post1, post2]).then(data => (out5.textContent = data));
   out5.textContent = '...loading...';
 }
 
@@ -161,11 +161,11 @@ function t5() {
 b5.onclick = t5;
 // Task 6 ============================================
 /* 
- <p> Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 3.
+ <p> Отправьте POST запрос на сайт http://postpost.itgid.info/index2.php. В качестве action укажите 3.
     Добавьте
     параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет сумму чисел. </p>
 <p>Отправьте POST
-    запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 4.
+    запрос на сайт http://postpost.itgid.info/index2.php. В качестве action укажите 4.
     Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет случайное число в
     заданном
     диапазоне.</p>
@@ -173,27 +173,75 @@ b5.onclick = t5;
     Выведите в
     out-6 результат. Запускаться функция должна по нажатию b-6. </p>
 */
+const b6 = document.querySelector('.b-6');
+const out6 = document.querySelector('.out-6');
 
-function t6() {}
+function t6() {
+  const post1 = new Promise((res, rej) => {
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': contentType
+      },
+      body: `${auth}&action=3&num1=22&num2=78`
+    }).then(resp => res(resp.text()));
+  });
+
+  const post2 = new Promise((res, rej) => {
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': contentType
+      },
+      body: `${auth}&action=3&num1=22&num2=78`
+    }).then(resp => res(resp.text()));
+  });
+
+  Promise.all([post1, post2]).then(data => (out6.textContent = data));
+  out6.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
-
+b6.onclick = t6;
 // Task 7 ============================================
 /*  
- <p> Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 5.
+ <p> Отправьте POST запрос на сайт http://postpost.itgid.info/index2.php. В качестве action укажите 5.
 Если все сделано верно, сервер вернет текущее время и дату. Не забывайте указывать параметр auth (ключ в
 чате).</p>
 <p>Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 6.
 Добавьте параметр num1 и num2 содержащие числа. Если все сделано верно, сервер вернет большее число.</p>
 <p>Два запроса объедините с помощью promiseAll.
 Выведите в out-7 результат. Запускаться функция должна по нажатию b-7. </p>
-
 */
+const b7 = document.querySelector('.b-7');
+const out7 = document.querySelector('.out-7');
 
-function t7() {}
+function t7() {
+  const post1 = new Promise((res, rej) => {
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': contentType
+      },
+      body: `${auth}&action=5`
+    }).then(resp => res(resp.text()));
+  });
+
+  const post2 = new Promise((res, rej) => {
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': contentType
+      },
+      body: `${auth}&action=6&num1=32&num2=57`
+    }).then(resp => res(resp.text()));
+  });
+
+  Promise.all([post1, post2]).then(data => (out7.textContent = data));
+}
 
 // ваше событие здесь!!!
-
+b7.onclick = t7;
 // Task 8 ============================================
 /* 
 <p> Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 7.
@@ -206,7 +254,34 @@ function t7() {}
 <p>Два запроса объедините с помощью promiseAll. Выведите в out-8 результат. Запускаться функция должна по
 нажатию b-8.</p>
 */
+const b8 = document.querySelector('.b-8');
+const out8 = document.querySelector('.out-8');
 
-function t8() {}
+function t8() {
+  const post1 = new Promise((res, rej) => {
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': contentType
+      },
+      body: `${auth}&action=7`
+    }).then(resp => res(resp.text()));
+  });
+
+  const post2 = new Promise((res, rej) => {
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': contentType
+      },
+      body: `${auth}&action=8&year=1974`
+    }).then(resp => res(resp.text()));
+  });
+
+  Promise.all([post1, post2]).then(data => (out8.textContent = data));
+
+  out8.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
+b8.onclick = t8;
