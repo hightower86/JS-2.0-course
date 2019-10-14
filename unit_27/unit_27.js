@@ -9,7 +9,6 @@ const b1 = document.querySelector('.b-1');
 const out1 = document.querySelector('.out-1');
 const url = 'http://getpost.itgid.info/index2.php';
 const auth = 'auth=zhrgB3DxC8LoG7Gcisjc';
-const contentType = 'application/x-www-form-urlencoded';
 
 function t1() {
   get1 = new Promise((resolve, reject) => {
@@ -130,11 +129,36 @@ POST запрос на сайт http://getpost.itgid.info/index2.php. В кач�
 запроса объедините с помощью promiseAll. Результат выведите в out-5 результат. Запускаться функция
 должна по нажатию b-5.</p>
 */
+const b5 = document.querySelector('.b-5');
+const out5 = document.querySelector('.out-5');
+const contentType = 'application/x-www-form-urlencoded';
 
-function t5() {}
+function t5() {
+  get1 = new Promise((res, rej) => {
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': contentType
+      },
+      body: `${auth}&action=1`
+    }).then(resp => res(resp.text()));
+  });
+  get2 = new Promise((res, rej) => {
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': contentType
+      },
+      body: `${auth}&action=2&name=adel`
+    }).then(resp => res(resp.text()));
+  });
+
+  Promise.all([get1, get2]).then(data => (out5.textContent = data));
+  out5.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
-
+b5.onclick = t5;
 // Task 6 ============================================
 /* 
  <p> Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 3.
