@@ -73,11 +73,25 @@ b2.onclick = t2;
 <p>Два
 запроса объедините с помощью promiseAll.
 Выведите в out-3 результат. Запускаться функция должна по нажатию b-3. </p>
-                 */
+*/
+const b3 = document.querySelector('.b-3');
+const out3 = document.querySelector('.out-3');
 
-function t3() {}
+function t3() {
+  const get1 = new Promise((resolve, reject) => {
+    fetch(`${url}?${auth}&action=5`).then(resp => resolve(resp.text()));
+  });
+  const get2 = new Promise((resolve, reject) => {
+    fetch(`${url}?${auth}&action=6&num1=99&num2=43`).then(resp =>
+      resolve(resp.text())
+    );
+  });
+  Promise.all([get1, get2]).then(data => (out3.textContent = data));
+  out3.textContent = '...loading...';
+}
 
 // ваше событие здесь!!!
+b3.onclick = t3;
 
 // Task 4 ============================================
 /*  
@@ -89,13 +103,24 @@ function t3() {}
 качестве параметра по очереди укажите year равный году вашего рождения. Если все правильно сервер вернет
 ваш возраст.</p>
 <p>Выведите в out-4 результат. Запускаться функция должна по нажатию b-4.</p>
-
 */
+const b4 = document.querySelector('.b-4');
+const out4 = document.querySelector('.out-4');
+function t4() {
+  const get1 = new Promise((resolve, reject) => {
+    fetch(`${url}?${auth}&action=7`).then(response => resolve(response.text()));
+  });
+  const get2 = new Promise((resolve, reject) => {
+    fetch(`${url}?${auth}&action=8&year=1974`).then(response =>
+      resolve(response.text())
+    );
+  });
 
-function t4() {}
+  Promise.all([get1, get2]).then(data => (out4.textContent = data));
+}
 
 // ваше событие здесь!!!
-
+b4.onclick = t4;
 // Task 5 ============================================
 /*  
  <p>Отправьте POST запрос на сайт http://getpost.itgid.info/index2.php. В качестве action укажите 1.</p>
